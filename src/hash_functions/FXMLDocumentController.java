@@ -27,7 +27,8 @@ public class FXMLDocumentController implements Initializable {
     private Stage stage;
     @FXML
     private RadioButton modul, cuadra, plega, trunca, aani, encadena, rlineal, rcuadra, rdoble;
-    int opcHash=0, opcCol;
+    int opcHash=0, opcCol=0;
+    String [] datos;
     
     
    
@@ -43,6 +44,8 @@ public class FXMLDocumentController implements Initializable {
             AllLines a = new AllLines(files.getPath());
             System.out.println("path--"+files.getPath());
             int lineas = a.getLines();
+            System.out.println("lineas---" + lineas);
+           datos = a.AllLines(lineas);
         }
         
     }

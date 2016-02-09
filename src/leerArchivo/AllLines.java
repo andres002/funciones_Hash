@@ -24,9 +24,12 @@ public class AllLines{
           br = new BufferedReader(fr);
 
           while((bfread = br.readLine()) != null){
+              if(!(bfread.replaceAll(" |\r|\n|\t", "")).equals("")){
               datos[c] = bfread;
               System.out.println("datos----" + datos[c]);
               c++;
+             }
+              
           }
       }catch(java.io.IOException ioex){
       }finally{
@@ -50,7 +53,10 @@ public class AllLines{
       br = new BufferedReader(fr); // Creamos el objeto de la clase BufferedReader
         
       while((cadena=br.readLine()) != null){ //Un ciclo que nos leerá cada una de las lineas de nuestro archivo hasta que ya no haya nada.
-           cont=cont+1; //nos lleva el conteo de las lineas
+          if(!(cadena.replaceAll(" |\r|\n|\t", "")).equals("")){
+              cont=cont+1; //nos lleva el conteo de las lineas
+          }
+           
       }
 
     }catch(Exception e){ 
