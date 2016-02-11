@@ -4,7 +4,7 @@ public class Arre{
 	int [][] D;
 	int tamano;
 	
-	private void soluColisions(int position, int dato){
+	public void soluColisions(int position, int dato){
 		boolean bandera = false;
 		int x = 1;
 			if(D[position][x] == '\0'){
@@ -13,7 +13,7 @@ public class Arre{
 			}else{
 				while(bandera==false){
 					x++;
-					if(D[position][x] != '\0'){
+					if(D[position][x] == '\0'){
 						D[position][x] = dato;
 						bandera = true;
 					}
@@ -23,12 +23,17 @@ public class Arre{
 	}
 		
 
-	
+	public int[][] getArray(){
+            return D;
+        }
 
 	
-	private void cleanArray(int tamano){
+	public void cleanArray(int tamano){
+            D = new int [tamano +1][tamano +1];
+            System.out.println("tamaño..." + tamano);
 		for (int x = 1; x <= tamano; x++) {
 			for (int y = 1; y <= tamano; y++) {
+                            
 				D[x][y] = '\0'; 
 			}
 			

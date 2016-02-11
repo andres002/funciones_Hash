@@ -1,6 +1,10 @@
+package functions;
+
+import hash_functions.Suit;
 import java.io.*;
 import java.util.*;
 public class Division{
+    Suit suit = new Suit();
 	int [] n={1001, 1005, 1007, 1025, 1030, 1039, 1049, 1057, 1090, 1095, 1098, 1099, 1100, 1127, 1136, 1145, 1148, 
 			1158, 1165, 1191, 1194, 1197, 1200, 1202, 1208, 1227, 1233, 1240, 1254, 1299, 1302, 1325, 1329, 1343, 1352, 
 			1360, 1373, 1376, 1382, 1389, 1407, 1415, 1423, 1433, 1443, 1453, 1456, 1461, 1487, 1494, 1501, 1505, 1507, 
@@ -14,19 +18,22 @@ public class Division{
 		d.calcula();
 		d.imprime();	
 	}
+        public void setArray(int[] n){
+            this.n = n;
+        }
 
 	public void calcula(){
 		int k;
 		int h;
 		for (int i=0; i<n.length; i++){
-				h= (n[i]%n.length);
+				h= (n[i]%n.length) + 1;
 				System.out.println("num: "+n[i]+ " id: "+h);
 				acomodar(n[i],h);
 			}
 	}
 
 	public void acomodar(int num,int id){
-		k[id] = num;
+		suit.acomodar(id,num);
 	
 	}
 

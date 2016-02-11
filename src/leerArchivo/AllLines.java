@@ -14,10 +14,12 @@ public class AllLines{
 	}
 	
 
-	public static String [] AllLines(int numlines){
+	public static int [] AllLines(int numlines){
             System.out.println("numero de lineas---" + numlines);
+             int datos2[] = new int[numlines]; ;
 		try{
 		  datos = new String [numlines];
+                   datos2 = new int[numlines];
           int c = 0;
           String bfread = "";
        	  fr = new FileReader(name);
@@ -26,6 +28,7 @@ public class AllLines{
           while((bfread = br.readLine()) != null){
               if(!(bfread.replaceAll(" |\r|\n|\t", "")).equals("")){
               datos[c] = bfread;
+              datos2[c] = Integer.parseInt(datos[c]);
               System.out.println("datos----" + datos[c]);
               c++;
              }
@@ -38,7 +41,7 @@ public class AllLines{
         }catch(java.io.IOException ioex){
         }
       }
-      return datos;
+      return datos2;
   }
 
   public int getLines (){ // Método que devuelve número de líneas del archivo

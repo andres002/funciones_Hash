@@ -48,7 +48,7 @@
             <RadioButton fx:id="rdoble" layoutX="309.0" layoutY="196.0" mnemonicParsing="false" text="Reasiganación doble dirección Hash" toggleGroup="$col" />
             <Label layoutX="35.0" layoutY="38.0" text="Funciones Hash" />
             <Label layoutX="350.0" layoutY="38.0" text="Colisiones" />
-            <Button fx:id="constTabla" layoutX="248.0" layoutY="245.0" mnemonicParsing="false" text="Construir Tabla" />
+            <Button fx:id="constTabla" layoutX="248.0" layoutY="245.0" mnemonicParsing="false" onAction="#opciones" text="Construir Tabla" />
          </children>
       </Pane>
       <Pane layoutY="283.0" prefHeight="324.0" prefWidth="593.0">
