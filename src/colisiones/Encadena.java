@@ -1,16 +1,16 @@
 package colisiones;
 
-public class Principal{
+public class Encadena{
 	ListaSimple ls;
 	int tamano;
 	
-	private void soluColisions(int position, int dato){
+	public void soluColisions(int position, int dato){
 		ListaSimple ls2 = (ListaSimple)ls.get(position).getData();
 		ls2.add(dato);
 		System.out.println("El dato quedo guardado en la posicion: " + position +", " + ls2.size());
 	}
 
-	private void cleanList(int tamano){
+	public void cleanList(int tamano){
 		ls = new ListaSimple();
 		for (int x = 1; x <= tamano; x++) {
 			ls.add(new ListaSimple());
@@ -21,8 +21,8 @@ public class Principal{
 		
 
 
-	public static void main(String[] args) {
-		Principal a = new Principal();
+/*	public static void main(String[] args) {
+		Encadena a = new Encadena();
 		a.tamano =10;
 		a.cleanList(a.tamano);
 		a.soluColisions(1,1);
@@ -58,5 +58,5 @@ public class Principal{
 
 
 
-	}
+	}*/
 }

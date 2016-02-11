@@ -8,6 +8,7 @@ import static hash_functions.FXMLDocumentController.opcCol;
 import static hash_functions.FXMLDocumentController.opcHash;
 import static hash_functions.FXMLDocumentController.datos;
 import static hash_functions.FXMLDocumentController.arre;
+import static hash_functions.FXMLDocumentController.cadena;
 /**
  *
  * @author Andres
@@ -16,6 +17,10 @@ public class Suit {
         public void acomodar(int id, int dato){
         if(opcCol == 1){
             arre.soluColisions(id, dato);
+        }
+        
+        if(opcCol == 2){
+            cadena.soluColisions(id, dato);
         }
     }
 }

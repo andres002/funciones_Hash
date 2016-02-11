@@ -6,6 +6,7 @@
 package hash_functions;
 
 import colisiones.Arre;
+import colisiones.Encadena;
 import functions.Cuadrado;
 import functions.Division;
 import java.io.File;
@@ -32,6 +33,7 @@ public class FXMLDocumentController implements Initializable {
     static public int opcHash = 0, opcCol = 0;
     static int[] datos;
     static Arre arre = new Arre();
+    static Encadena cadena = new Encadena();
 
     @FXML
     private void openfile() {
@@ -71,6 +73,7 @@ public class FXMLDocumentController implements Initializable {
         }
         if (encadena.isSelected()) {
             opcCol = 2;
+            cadena.cleanList(datos.length);
         }
         if (rlineal.isSelected()) {
             opcCol = 3;
