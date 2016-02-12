@@ -10,12 +10,11 @@ package colisiones;
  * @author Javier
  */
 public class lineal {
-    int[] v ={7,9,8,5,4};
-	int N =5; //número de elementos
-
-	public void lineal(int k){
+    
+	public void linealB(int k,int[] v){
 		//int d = H(k); poner funcion hash
             int d = 2;
+            int N = v.length;
 		int dx = 0;
 		if(v[d]==k){
 			System.out.println("El elemento esta en la posicion"+d);
@@ -36,6 +35,25 @@ public class lineal {
 			}
 
 		}
+	}
+        
+        /*
+        * @param d id hash
+        */
+        public int lineal(int d,int[] v){
+
+		
+		int N = v.length;
+			int dx = d+1;
+			while(dx <= N && v[dx]!='\0' &&  dx != d){
+				dx = dx +1 ;
+				if(dx == N+1){
+					dx = 1;
+				}
+			}
+                        return dx;
+			
+		
 	}
 
 	

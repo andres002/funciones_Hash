@@ -11,9 +11,11 @@ package colisiones;
  */
 public class cuadratico {
     
-        int[] v ={7,9,8,5,4};
-	int N =5; //número de elementos
-    public void testCuadratico(int k){
+     
+	
+        
+        
+    public void cuadraticoB(int k, int[] v ){
 		int d=  5; //H[k]; colocar funcion hash
 	
                 
@@ -24,7 +26,9 @@ public class cuadratico {
 			int i =1;
 			int dx = (int) (d + Math.pow(i,2));
 			while(v[dx] != k ){
-				if(dx > N){
+                            dx = (int) (d + Math.pow(i,2));
+                            i = i+1;
+				if(dx > v.length){
 					i = 0;
 					dx = 1;
 					d = 1;
@@ -38,5 +42,27 @@ public class cuadratico {
 			}         
 			
 		}
+	}
+    
+    
+     public int cuadratico(int d, int[] v){
+		
+                
+		
+			int i =1;
+			int dx = (int) (d + Math.pow(i,2));
+			while(v[dx] != '\0' ){
+                            dx = (int) (d + Math.pow(i,2));
+                            i = i+1;
+				if(dx > v.length){
+					i = 0;
+					dx = 1;
+					d = 1;
+				}
+			}
+                        return dx;
+			   
+			
+		
 	}
 }

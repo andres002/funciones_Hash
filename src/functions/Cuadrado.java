@@ -93,17 +93,17 @@ public class Cuadrado {
             cont++;
         }
 
-        if (n.length < 100) {
+        if (n.length > 0 && n.length <= 10) {
             digitos(1, k1, cont);
         }
-        if (n.length >= 100 && n.length < 1000) {
+        if (n.length > 10 && n.length <= 100) {
             if (cont == 1) {
                 digitos(1, k1, cont);
             } else {
                 digitos(2, k1, cont);
             }
         }
-        if (n.length >= 1000 && n.length < 10000) {
+        if (n.length > 100 && n.length <= 1000) {
             if (cont == 1) {
                 digitos(1, k1, cont);
             } else if (cont == 2) {
@@ -113,7 +113,7 @@ public class Cuadrado {
             }
         }
 
-        if (n.length >= 10000 && n.length < 100000) {
+        if (n.length > 1000 && n.length <= 10000) {
             if (cont == 1) {
                 digitos(1, k1, cont);
             } else if (cont == 2) {
@@ -123,7 +123,7 @@ public class Cuadrado {
             } else {
                 digitos(4, k1, cont);
             }
-            if (n.length >= 100000 && n.length < 1000000) {
+            if (n.length > 10000 && n.length <= 100000) {
                 if (cont == 1) {
                     digitos(1, k1, cont);
                 } else if (cont == 2) {
