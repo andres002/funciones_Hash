@@ -22,5 +22,8 @@ public class Suit {
         if(opcCol == 2){
             cadena.soluColisions(id, dato);
         }
+        if (opcCol == 4){
+            
+        }
     }
 }
