@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Truncamiento {
 
-     int[] n = {1001, 1005, 1007, 1025, 1030, 1039, 1049, 1057, 1090, 1095, 1098, 1099, 1100, 1127, 1136, 1145, 1148,
+     int[] n = {7256, 1005, 1007, 1025, 1030, 1039, 1049, 1057, 1090, 1095, 1098, 1099, 1100, 1127, 1136, 1145, 1148,
             1158, 1165, 1191, 1194, 1197, 1200, 1202, 1208, 1227, 1233, 1240, 1254, 1299, 1302, 1325, 1329, 1343, 1352,
             1360, 1373, 1376, 1382, 1389, 1407, 1415, 1423, 1433, 1443, 1453, 1456, 1461, 1487, 1494, 1501, 1505, 1507,
             1512, 1513, 1525, 1526, 1532, 1551, 1578, 1581, 1585, 1610, 1615, 1622, 1633, 1635, 1646, 1651, 1684, 1692,
@@ -21,120 +21,148 @@ public class Truncamiento {
             1894, 1905, 1909, 1911, 1919, 1930, 9359, 1957, 1960, 1969, 1971};
 
     public static void main(String [] args) {
-       Scanner x = new Scanner(System.in);
-        
-        Truncamiento a = new Truncamiento();
-        int aux[]= new int[a.n.length];
-        int k;
+         
+       Truncamiento a = new Truncamiento();
         int res;
         System.out.println("Bienvenido");
-        System.out.print("\nNumero a buscar: ");
+       
         for (int i = 0; i < a.n.length; i++) {
            res = a.Truncar(a.n[i],a.n.length); 
-           aux[res]=a.n[i];
-            System.out.println("id: "+res+" valor: "+aux[res]);
+            System.out.println("id: "+res+" valor: "+a.n[i]);
         }
-    }
+        }
+    
 
     public int Truncar(int clave, int tama) {
-    	int cont =0;
-    	int numero=clave;
-    	while(numero>0){
-    	numero=numero/10;
-    		cont++;
-    	}
-    	//System.out.println("contador: "+cont);
-        if (tama < 100) {
-            String a = String.valueOf(clave);
-            String x = String.valueOf(a.charAt(0));
-            String union = x;
+    	
+        int digitos = calculaD(clave);
+        int id = GeneraId(clave, digitos,tama);
+        return id;
 
-            int convert = (Integer.parseInt(union)) + 1;
-            return convert;
-
-        } else if (tama>10 &&tama >= 100 && tama < 1000) {
-           if(cont>2){
-           	String a = String.valueOf(clave);
-            String x = String.valueOf(a.charAt(0));
-            String y = String.valueOf(a.charAt(2));
-            String union = x + y;
-
-            int convert = (Integer.parseInt(union)) + 1;
-            return convert;
-           }else if(cont>=1&&cont<=2){
-           	String a = String.valueOf(clave);
-           	String x= String.valueOf(a.charAt(0));
-           	String union = x;
-
-            int convert = (Integer.parseInt(union)) + 1;
-            return convert;
-           }
-
-        } else if (tama >= 1000 && tama < 10000) {
-           if(cont>5){
-           	String a = String.valueOf(clave);
-            String x = String.valueOf(a.charAt(0));
-            String y = String.valueOf(a.charAt(2));
-            String z = String.valueOf(a.charAt(4));
-            String union = x + y + z;
-
-            int convert = (Integer.parseInt(union)) + 1;
-            return convert;
-
-           }else if(cont>=3&&cont<5){
-           	String a = String.valueOf(clave);
-            String x = String.valueOf(a.charAt(0));
-            String y = String.valueOf(a.charAt(2));
-            String union = x + y;
-
-            int convert = (Integer.parseInt(union)) + 1;
-            return convert;
-
-           }else if(cont>0&&cont<3){
-           	String a = String.valueOf(clave);
-            String x = String.valueOf(a.charAt(0));
-            String union = x;
-
-            int convert = (Integer.parseInt(union)) + 1;
-            return convert;
-
-           }
-        } else if (tama >= 10000 && tama < 100000) {
-            if(cont>=6){
-            String a = String.valueOf(clave);
-            String x = String.valueOf(a.charAt(0));
-            String y = String.valueOf(a.charAt(2));
-            String z = String.valueOf(a.charAt(4));
-            String w = String.valueOf(a.charAt(6));
-            String union = x + y + z + w + w;
-
-            int convert = (Integer.parseInt(union)) + 1;
-            return convert;
-            }else if(cont>=5&&cont<6){
-            String a = String.valueOf(clave);
-            String x = String.valueOf(a.charAt(0));
-            String y = String.valueOf(a.charAt(2));
-            String z = String.valueOf(a.charAt(4));
-
-            String union = x + y + z;
-            int convert = (Integer.parseInt(union)) + 1;
-            return convert;
-            }else if(cont>=3&&cont<=4){
-            String a = String.valueOf(clave);
-            String x = String.valueOf(a.charAt(0));
-            String y = String.valueOf(a.charAt(2));
-            String union = x + y;
-            int convert = (Integer.parseInt(union)) + 1;
-
-            }else if(cont<3&&cont>1){
-            	String a = String.valueOf(clave);
-            String x = String.valueOf(a.charAt(0));
-           
-            String union = x;
-            int convert = (Integer.parseInt(union)) + 1;
-}
-        }
-        return 0;
 
     }
+    public int calculaD(int clave){
+    int cont = 0;
+    while(clave!=0){
+        clave = clave/10;
+        cont++;
+    }
+    return cont;
+}
+
+ public int GeneraId(int clave, int digitos, int tama){
+        int convert;
+      //  System.out.println("El tamano es: "+tama);
+        if(tama>=100&&tama<=999){
+            if(digitos==1){
+                return clave;
+            }
+            if(digitos==2){
+                clave=clave/10;
+                return clave;
+            }
+            if(digitos==3||digitos==4){
+            String a = String.valueOf(clave);
+            String x = String.valueOf(a.charAt(0));
+          //  System.out.println("--"+x);
+            String y = String.valueOf(a.charAt(2));
+          //  System.out.println("--"+y);
+            String union = x + y;
+          //  System.out.println("union es: "+union);
+
+            convert = (Integer.parseInt(union)) + 1;
+          //  System.out.println("conver es: "+convert);
+            return convert;
+
+            }
+
+        }
+        if(tama>=1000&&tama<=9999){
+            if(digitos==1){
+                return clave;
+            }
+            if(digitos==2){
+                return clave/10;
+            }
+            if(digitos==3||digitos==4){
+            String a = String.valueOf(clave);
+            String x = String.valueOf(a.charAt(0));
+            String y = String.valueOf(a.charAt(2));
+            
+            String union = x+y;
+            convert = (Integer.parseInt(union)) + 1;
+            return convert;
+
+            }
+            if(digitos==5||digitos==6){
+            String a = String.valueOf(clave);
+            String x = String.valueOf(a.charAt(0));
+            String y = String.valueOf(a.charAt(2));
+            String z = String.valueOf(a.charAt(4));
+            String union = x+y+z;
+             convert = (Integer.parseInt(union)) + 1;
+            return convert;
+
+            }
+
+        }
+        if(tama>=10000&&tama<100000){
+                if(digitos==1){
+                return clave;
+            }
+            if(digitos==2){
+                return clave/10;
+            }
+            if(digitos==3||digitos==4){
+            String a = String.valueOf(clave);
+            String x = String.valueOf(a.charAt(0));
+            String y = String.valueOf(a.charAt(2));
+            
+            String union = x+y;
+            convert = (Integer.parseInt(union)) + 1;
+            return convert;
+
+            }
+            if(digitos==5||digitos==6){
+            String a = String.valueOf(clave);
+            String x = String.valueOf(a.charAt(0));
+            String y = String.valueOf(a.charAt(2));
+            String z = String.valueOf(a.charAt(4));
+            String union = x+y+z;
+             convert = (Integer.parseInt(union)) + 1;
+            return convert;
+
+            }
+            if(digitos==7||digitos==8){
+            String a = String.valueOf(clave);
+            String x = String.valueOf(a.charAt(0));
+            String y = String.valueOf(a.charAt(2));
+            String z = String.valueOf(a.charAt(4));
+            String union = x+y+z;
+             convert = (Integer.parseInt(union)) + 1;
+            return convert;
+
+            }
+            if(digitos==7||digitos==8){
+            String a = String.valueOf(clave);
+            String x = String.valueOf(a.charAt(0));
+            String y = String.valueOf(a.charAt(2));
+            String z = String.valueOf(a.charAt(4));
+            String v = String.valueOf(a.charAt(6));
+            String union = x+y+z+v;
+             convert = (Integer.parseInt(union)) + 1;
+            return convert;
+            }
+            }
+            if(tama<=99){
+                String a = String.valueOf(clave);
+            String x = String.valueOf(a.charAt(0));
+            convert = (Integer.parseInt(x)) + 1;
+            return convert;
+            }
+
+       
+        
+ return 0;
+}
 }
