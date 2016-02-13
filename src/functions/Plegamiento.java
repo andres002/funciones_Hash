@@ -20,26 +20,14 @@ public class Plegamiento {
             1894, 1905, 1909, 1911, 1919, 1930, 9359, 1957, 1960, 1969, 1971};
  public static void main(String[] args) {
          Plegamiento a = new Plegamiento();
-        int aux[]= new int[a.n.length];
-        boolean band = true;
-        int res;
+      
         System.out.println("Bienvenido");
         for (int i=0;i<a.n.length ;i++ ) {
-          int valora= a.plegamiento(a.n[i]);
-            band =true;
-            while(band){
-              if(valora>=a.n.length){
-                valora=a.plegamiento(valora);
-              }else{
-                aux[valora]=a.n[i];//aqui se general el id valido
-                System.out.println("El id es: "+valora+" El dato es: "+a.n[i]);
-                band=false;
-              }
-            }
+          int valora= a.plegamiento(a.n[i]);//aqui se genera el Id
+            System.out.println("El id es: "+valora+" El dato es: "+a.n[i]);
             
 
         }
-       
     }
     public int plegamiento(int clave){
       int suma=0;

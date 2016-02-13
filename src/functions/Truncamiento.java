@@ -27,7 +27,7 @@ public class Truncamiento {
         System.out.println("Bienvenido");
        
         for (int i = 0; i < a.n.length; i++) {
-           res = a.Truncar(a.n[i],a.n.length); 
+           res = a.Truncar(a.n[i],a.n.length); //este es el Id aquí se obtiene
             System.out.println("id: "+res+" valor: "+a.n[i]);
         }
         }
