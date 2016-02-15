@@ -28,9 +28,9 @@ public class DobleDireccionHash {
         if(v[d]==k){
             System.out.println("Esta en la posicion:"+d);
         }else{
-           int dx=(v[d]%v.length)+1;
+           int dx=((d+1)%v.length)+1;
             while ((dx<=v.length)&&(v[dx]!=k)&&(v.length!=0)&&(dx!=d)){
-                dx=(v[dx]%v.length)+1;
+                dx=(dx%v.length)+1;
             }
             if (v[dx]==k){
                 System.out.println("Esta en la posicion:"+dx);
