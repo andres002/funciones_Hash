@@ -21,6 +21,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import leerArchivo.AllLines;
@@ -36,6 +37,8 @@ public class FXMLDocumentController implements Initializable {
     private Stage stage;
     @FXML
     private RadioButton modul, cuadra, plega, trunca, aani, encadena, rlineal, rcuadra, rdoble;
+    @FXML
+    private Pane panel1, panel2; 
     static public int opcHash = 0, opcCol = 0;
     static int[] datos;
     static int[] datosL;
@@ -60,6 +63,7 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("lineas---" + lineas);
             datos = a.AllLines(lineas);
             datosL = new int[datos.length+1];
+            panel1.setDisable(false);
             
         }
 
@@ -141,12 +145,20 @@ public class FXMLDocumentController implements Initializable {
             opcHash = 4;
             trunca();
         }
-
+        panel1.setDisable(true);
+        panel2.setDisable(false);
+    }
+    
+    @FXML
+    private void restart(){
+        panel2.setDisable(true);
+        panel1.setDisable(false);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        panel1.setDisable(true);
+        panel2.setDisable(true);
     }
 
 }

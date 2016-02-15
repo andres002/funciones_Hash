@@ -8,27 +8,8 @@
 
 <AnchorPane id="AnchorPane" prefHeight="613.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hash_functions.FXMLDocumentController">
     <children>
-      <Pane prefHeight="282.0" prefWidth="593.0">
+      <Pane fx:id="panel1" prefHeight="282.0" prefWidth="593.0">
          <children>
-            <MenuBar prefHeight="28.0" prefWidth="593.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Archivo">
-                  <items>
-                    <MenuItem mnemonicParsing="false" onAction="#openfile" text="Leer Archivo" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-              </menus>
-            </MenuBar>
             <RadioButton fx:id="cuadra" layoutX="40.0" layoutY="98.0" mnemonicParsing="false" text="Cuadrado">
                <toggleGroup>
                   <ToggleGroup fx:id="hash" />
@@ -51,12 +32,32 @@
             <Button fx:id="constTabla" layoutX="248.0" layoutY="245.0" mnemonicParsing="false" onAction="#opciones" text="Construir Tabla" />
          </children>
       </Pane>
-      <Pane layoutY="283.0" prefHeight="324.0" prefWidth="593.0">
+      <Pane fx:id="panel2" layoutY="283.0" prefHeight="324.0" prefWidth="593.0">
          <children>
             <Label layoutX="41.0" layoutY="30.0" text="Ingrese el dato a buscar" />
             <TextField layoutX="242.0" layoutY="26.0" prefHeight="25.0" prefWidth="188.0" />
             <Button layoutX="507.0" layoutY="26.0" mnemonicParsing="false" text="Buscar" />
+            <Button fx:id="funcr" layoutX="244.0" layoutY="78.0" mnemonicParsing="false" onAction="#restart" text="Cambiar Funcion" />
          </children>
       </Pane>
+      <MenuBar prefHeight="28.0" prefWidth="593.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openfile" text="Leer Archivo" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
     </children>
 </AnchorPane>
