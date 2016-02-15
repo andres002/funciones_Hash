@@ -12,6 +12,8 @@ import colisiones.lineal;
 import functions.Cuadrado;
 import functions.Division;
 import functions.DobleDireccionHash;
+import functions.Plegamiento;
+import functions.Truncamiento;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -81,6 +83,18 @@ public class FXMLDocumentController implements Initializable {
         }
     }
     
+    private void trunca(){
+        Truncamiento truncas = new Truncamiento();
+        truncas.setArray(datos);
+        truncas.calcular();
+    }
+    
+    private void plega(){
+        Plegamiento plegas = new Plegamiento();
+        plegas.setArray(datos);
+        plegas.calcular();
+    }
+    
     private void DobleHash(){
     DobleDireccionHash DoHash = new DobleDireccionHash();
     DoHash.setArray(datos);
@@ -121,9 +135,11 @@ public class FXMLDocumentController implements Initializable {
         }
         if (plega.isSelected()) {
             opcHash = 3;
+            plega();
         }
         if (trunca.isSelected()) {
             opcHash = 4;
+            trunca();
         }
 
     }
