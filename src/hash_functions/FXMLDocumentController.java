@@ -7,6 +7,8 @@ package hash_functions;
 
 import colisiones.Arre;
 import colisiones.Encadena;
+import colisiones.cuadratico;
+import colisiones.lineal;
 import functions.Cuadrado;
 import functions.Division;
 import functions.DobleDireccionHash;
@@ -34,6 +36,9 @@ public class FXMLDocumentController implements Initializable {
     private RadioButton modul, cuadra, plega, trunca, aani, encadena, rlineal, rcuadra, rdoble;
     static public int opcHash = 0, opcCol = 0;
     static int[] datos;
+    static int[] datosL;
+    static lineal li = new lineal();
+    static cuadratico cu =  new cuadratico();
     static Arre arre = new Arre();
     static Encadena cadena = new Encadena();
     private TextField dato;
@@ -52,6 +57,8 @@ public class FXMLDocumentController implements Initializable {
             int lineas = a.getLines();
             System.out.println("lineas---" + lineas);
             datos = a.AllLines(lineas);
+            datosL = new int[datos.length+1];
+            
         }
 
     }
@@ -60,12 +67,18 @@ public class FXMLDocumentController implements Initializable {
         Division d = new Division();
         d.setArray(datos);
         d.calcula();
+        for (int i = 0; i < datosL.length; i++) {
+            System.out.println("id "+i +"dato: "+datosL[i]);
+        }
     }
     
     private void cuadra() {
         Cuadrado cuadrado = new Cuadrado();
         cuadrado.setArray(datos);
         cuadrado.calcula1();
+        for (int i = 0; i < datosL.length; i++) {
+            System.out.println("id "+i +"dato: "+datosL[i]);
+        }
     }
     
     private void DobleHash(){
@@ -86,6 +99,7 @@ public class FXMLDocumentController implements Initializable {
         }
         if (rlineal.isSelected()) {
             opcCol = 3;
+            
         }
         if (rcuadra.isSelected()) {
             opcCol = 4;
@@ -98,6 +112,7 @@ public class FXMLDocumentController implements Initializable {
         if (modul.isSelected()) {
             opcHash = 1;
             modul();
+            
         }
 
         if (cuadra.isSelected()) {

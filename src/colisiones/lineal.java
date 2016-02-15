@@ -10,51 +10,53 @@ package colisiones;
  * @author Javier
  */
 public class lineal {
-    
-	public void linealB(int k,int[] v){
-		//int d = H(k); poner funcion hash
-            int d = 2;
-            int N = v.length;
-		int dx = 0;
-		if(v[d]==k){
-			System.out.println("El elemento esta en la posicion"+d);
 
-		}else{
-			dx = d+1;
-			while(dx <= N && v[dx]!=k &&  dx != d){
-				dx = dx +1 ;
-				if(dx == N+1){
-					dx = 1;
-				}
-			}
-			if(v[dx] ==k){
-				System.out.println("El elemento esta en la posicion "+dx);
+    public void linealB(int k, int[] v) {
+        //int d = H(k); poner funcion hash
+        int d = 2;
+        int N = v.length;
+        int dx = 0;
+        if (v[d] == k) {
+            System.out.println("El elemento esta en la posicion" + d);
 
-			}else{
-				System.out.println("El elemento no esta en el arreglo");
-			}
+        } else {
+            dx = d + 1;
+            while (dx <= N && v[dx] != k && dx != d) {
+                dx = dx + 1;
+                if (dx == N + 1) {
+                    dx = 1;
+                }
+            }
+            if (v[dx] == k) {
+                System.out.println("El elemento esta en la posicion " + dx);
 
-		}
-	}
-        
-        /*
-        * @param d id hash
-        */
-        public int lineal(int d,int[] v){
+            } else {
+                System.out.println("El elemento no esta en el arreglo");
+            }
 
-		
-		int N = v.length;
-			int dx = d+1;
-			while(dx <= N && v[dx]!='\0' &&  dx != d){
-				dx = dx +1 ;
-				if(dx == N+1){
-					dx = 1;
-				}
-			}
-                        return dx;
-			
-		
-	}
+        }
+    }
 
-	
+    /*
+     * @param d id hash
+     */
+    public int lineal(int d, int[] v, int dato) {
+
+        int N = v.length -1;
+
+        int dx = d + 1;
+        if (dx == N+1) {
+            dx = 1;
+        } 
+        while (dx <= N && v[dx] != '\0' && dx != d) {
+            dx = dx + 1;
+            if (dx == N + 1) {
+                dx = 1;
+            }
+        }
+        v[dx] = dato;
+        return dx;
+
+    }
+
 }

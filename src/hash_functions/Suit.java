@@ -9,6 +9,11 @@ import static hash_functions.FXMLDocumentController.opcHash;
 import static hash_functions.FXMLDocumentController.datos;
 import static hash_functions.FXMLDocumentController.arre;
 import static hash_functions.FXMLDocumentController.cadena;
+import static hash_functions.FXMLDocumentController.datosL;
+import static hash_functions.FXMLDocumentController.cu;
+import static hash_functions.FXMLDocumentController.li;
+
+
 /**
  *
  * @author Andres
@@ -22,8 +27,22 @@ public class Suit {
         if(opcCol == 2){
             cadena.soluColisions(id, dato);
         }
-        if (opcCol == 4){
+        if (opcCol == 3 ){
+            if(datosL[id] != '\0' ){
+                System.out.println("colision rLineal");
+                System.out.println("dato: "+ dato);
+                li.lineal(id,datosL,dato);
+            }else{
+                datosL[id] = dato;
+            }
             
+        }
+        if (opcCol == 4){
+           if(datosL[id] != '\0' ){
+                cu.cuadratico(id,datosL,dato);
+            }else{
+                datosL[id] = dato;
+            }
         }
     }
 }

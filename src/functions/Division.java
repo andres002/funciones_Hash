@@ -36,6 +36,7 @@ public class Division{
 		suit.acomodar(id,num);
 	
 	}
+        
 
 	public void imprime(){
 		int x=0;
