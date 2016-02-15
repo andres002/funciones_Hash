@@ -9,12 +9,14 @@ import colisiones.Arre;
 import colisiones.Encadena;
 import functions.Cuadrado;
 import functions.Division;
+import functions.DobleDireccionHash;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import leerArchivo.AllLines;
@@ -34,6 +36,7 @@ public class FXMLDocumentController implements Initializable {
     static int[] datos;
     static Arre arre = new Arre();
     static Encadena cadena = new Encadena();
+    private TextField dato;
 
     @FXML
     private void openfile() {
@@ -64,6 +67,12 @@ public class FXMLDocumentController implements Initializable {
         cuadrado.setArray(datos);
         cuadrado.calcula1();
     }
+    
+    private void DobleHash(){
+    DobleDireccionHash DoHash = new DobleDireccionHash();
+    DoHash.setArray(datos);
+    DoHash.DobleDirecHash(Integer.parseInt(dato.getText()));
+    }
 
     @FXML
     private void opciones() {
@@ -83,6 +92,7 @@ public class FXMLDocumentController implements Initializable {
         }
         if (rdoble.isSelected()) {
             opcCol = 5;
+            DobleHash();
         }
 
         if (modul.isSelected()) {
