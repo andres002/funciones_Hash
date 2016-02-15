@@ -67,7 +67,7 @@ public class FXMLDocumentController implements Initializable {
         Division d = new Division();
         d.setArray(datos);
         d.calcula();
-        for (int i = 0; i < datosL.length; i++) {
+        for (int i = 1; i < datosL.length; i++) {
             System.out.println("id "+i +"dato: "+datosL[i]);
         }
     }
@@ -76,7 +76,7 @@ public class FXMLDocumentController implements Initializable {
         Cuadrado cuadrado = new Cuadrado();
         cuadrado.setArray(datos);
         cuadrado.calcula1();
-        for (int i = 0; i < datosL.length; i++) {
+        for (int i = 1; i < datosL.length; i++) {
             System.out.println("id "+i +"dato: "+datosL[i]);
         }
     }
