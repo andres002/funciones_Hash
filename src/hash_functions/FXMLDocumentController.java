@@ -98,11 +98,11 @@ public class FXMLDocumentController implements Initializable {
         plegas.setArray(datos);
         plegas.calcular();
     }
-
-    private void DobleHash() {
-        DobleDireccionHash DoHash = new DobleDireccionHash();
-        DoHash.setArray(datos);
-        DoHash.DobleDirecHash(Integer.parseInt(dato.getText()));
+    
+    private void DobleHash(){
+    DobleDireccionHash DoHash = new DobleDireccionHash();
+    DoHash.SetArray(datos);
+    DoHash.Calcular();
     }
 
     @FXML
