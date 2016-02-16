@@ -8,7 +8,6 @@ public class Cuadrado {
 
     static int[] n;
     int resultado = 0;
-    //int[] aux = new int[n.length];
     Suit suit = new Suit();
 
     public void setArray(int[] n) {
@@ -138,6 +137,9 @@ public class Cuadrado {
             }
         }
         h = getResultado() + 1;
+         if(h>n.length){
+        	h=h-n.length;
+        }
         System.out.println("num: " + l + " id: " + h);
         suit.acomodar(h,l);
     }
@@ -148,32 +150,4 @@ public class Cuadrado {
         }
         
     }
-
-    /*public void acomodar(int num,int id){
-		aux[id] = num;
-	}
-
-	public void imprime(){
-		int x=0;
-		for (int i=0; i<n.length;i++){
-			x++;
-			System.out.println(x+" num: "+aux[i]);
-		}
-	}*/
-    
-    /*
-    public static void main(String[] args) {
-
-        Scanner x = new Scanner(System.in);
-        int opc;
-        int cont = 0;
-        int k, p;
-
-        Cuadrado d = new Cuadrado();
-        for (int i = 0; i < n.length; i++) {
-            d.calcula(n, n[i]);
-            //d.imprime();
-        }
-
-    }*/
 }
