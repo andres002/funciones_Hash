@@ -137,7 +137,7 @@ public class Cuadrado {
             }
         }
         h = getResultado() + 1;
-         if(h>n.length){
+         while(h>n.length){
         	h=h-n.length;
         }
         System.out.println("num: " + l + " id: " + h);
