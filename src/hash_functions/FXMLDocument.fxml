@@ -36,7 +36,7 @@
          <children>
             <Label layoutX="41.0" layoutY="30.0" text="Ingrese el dato a buscar" />
             <TextField layoutX="242.0" layoutY="26.0" prefHeight="25.0" prefWidth="188.0" />
-            <Button layoutX="507.0" layoutY="26.0" mnemonicParsing="false" text="Buscar" />
+            <Button layoutX="507.0" layoutY="26.0" mnemonicParsing="false" onAction="#opciones" text="Buscar" />
             <Button fx:id="funcr" layoutX="244.0" layoutY="78.0" mnemonicParsing="false" onAction="#restart" text="Cambiar Funcion" />
          </children>
       </Pane>
