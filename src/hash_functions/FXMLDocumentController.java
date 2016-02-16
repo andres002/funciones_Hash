@@ -97,8 +97,8 @@ public class FXMLDocumentController implements Initializable {
     
     private void DobleHash(){
     DobleDireccionHash DoHash = new DobleDireccionHash();
-    DoHash.setArray(datos);
-    DoHash.DobleDirecHash(Integer.parseInt(dato.getText()));
+    DoHash.SetArray(datos);
+    DoHash.Calcular();
     }
 
     @FXML
