@@ -38,10 +38,13 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private RadioButton modul, cuadra, plega, trunca, aani, encadena, rlineal, rcuadra, rdoble;
     @FXML
-    private Pane panel1, panel2;
+    public static Pane panel1, panel2;
+    @FXML
+    private TextField buscar;
     static public int opcHash = 0, opcCol = 0;
     static int[] datos;
     static int[] datosL;
+    public static int wea=0;
     static lineal li = new lineal();
     static cuadratico cu = new cuadratico();
     static Arre arre = new Arre();
@@ -107,27 +110,31 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void opciones() {
-       
+            if (!panel1.isDisable()) {
+                int algo = 0;
+                try{
+                algo = Integer.parseInt(buscar.getText());
+                }catch(Exception e){
+                    System.out.println("Excepcion---" + e);
+                }
+            }
+        
 
             if (aani.isSelected()) {
                 opcCol = 1;
                 if (!panel1.isDisable()) {
                 arre.cleanArray(datos.length);
-                }else{
                 }
             }
             if (encadena.isSelected()) {
                 opcCol = 2;
                 if (!panel1.isDisable()) {
                 cadena.cleanList(datos.length);
-                }else {
-                    
                 }
             }
             if (rlineal.isSelected()) {
                 opcCol = 3;
                 if (!panel1.isDisable()) {
-                }else{
                 }
 
             }
@@ -136,7 +143,9 @@ public class FXMLDocumentController implements Initializable {
             }
             if (rdoble.isSelected()) {
                 opcCol = 5;
+                 if (!panel1.isDisable()) {
                 DobleHash();
+                 }
             }
         
 
