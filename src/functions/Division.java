@@ -26,11 +26,16 @@ public class Division{
 		int k;
 		int h;
 		for (int i=0; i<n.length; i++){
-				h= (n[i]%n.length) + 1;
+				h= hash(n[i]);
 				System.out.println("num: "+n[i]+ " id: "+h);
 				acomodar(n[i],h);
 			}
 	}
+        
+        public int hash(int dato){
+            return (dato % n.length) + 1;
+        }
+        
 
 	public void acomodar(int num,int id){
 		suit.acomodar(id,num);
