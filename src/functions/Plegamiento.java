@@ -41,7 +41,7 @@ public class Plegamiento {
         int res;
         for (int i = 0; i < n.length; i++) {
             res = plegamiento(n[i]); //este es el Id aquí se obtiene
-            suit.acomodar(n[i], res);
+            suit.acomodar( res,n[i]);
             System.out.println("id: " + res + " valor: " + n[i]);
         }
     }
@@ -93,6 +93,11 @@ public class Plegamiento {
             }
 
         }
+        
+        if (clave1 == 0) {
+            return clave+1;
+        }
+        
 
         return suma;
 

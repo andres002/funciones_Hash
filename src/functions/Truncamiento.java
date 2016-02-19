@@ -42,7 +42,7 @@ public class Truncamiento {
         int res;
         for (int i = 0; i < n.length; i++) {
             res = Truncar(n[i]); //este es el Id aquí se obtiene
-            suit.acomodar(n[i], res);
+            suit.acomodar(res,n[i]);
             System.out.println("id: " + res + " valor: " + n[i]);
         }
     }

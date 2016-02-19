@@ -89,10 +89,15 @@ public class Cuadrado {
         String k1;
         k = (int) Math.pow(k, 2);
         k1 = k + "";
+        if (k==0){
+            cont++;
+        }
+        
         while (k > 0) {
             k = k / 10;
             cont++;
         }
+       
 
         if (n.length > 0 && n.length <= 10) {
             digitos(1, k1, cont);

@@ -140,6 +140,7 @@ public class FXMLDocumentController implements Initializable {
             plegas.calcular();
         }else{
             int id = plegas.plegamiento(dato);
+            System.out.println("este es el id que me manda ***** " + id);
             Search s = new Search();
             if(s.encontrar(id,dato)){
                 System.out.println("EL DATO FUE ENCONTRADO");
