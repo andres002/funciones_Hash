@@ -16,6 +16,16 @@ public class Encadena{
 			ls.add(new ListaSimple());
 		}
 	}
+        
+        public boolean searchDato(int id, int dato){
+                ListaSimple ls2 = (ListaSimple)ls.get(id).getData();
+		for(int x = 1; x <= ls2.size(); x++){
+                    if((int)ls2.get(x).getData() == dato){
+                        return true;
+                    }
+                }
+            return false;
+        }
 
 
 		

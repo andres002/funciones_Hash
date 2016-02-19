@@ -23,7 +23,7 @@ public class Search {
         }
 
         if (opcCol == 2) {
-            cadena.soluColisions(id, dato);
+            return cadena.searchDato(id, dato);
         }
         if (opcCol == 3) {
             if (datosL[id] != '\0') {
