@@ -3,6 +3,7 @@ package functions;
 import hash_functions.Suit;
 import java.io.*;
 import java.util.*;
+import static hash_functions.FXMLDocumentController.panel1;
 
 public class Cuadrado {
 
@@ -141,7 +142,11 @@ public class Cuadrado {
         	h=h-n.length;
         }
         System.out.println("num: " + l + " id: " + h);
-        suit.acomodar(h,l);
+        if(!panel1.isDisable()){        
+            suit.acomodar(h,l);
+        }else{
+            
+        }
     }
     
     public void calcula1 (){
