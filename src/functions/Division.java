@@ -1,6 +1,6 @@
 package functions;
 import hash_functions.Suit;
-import static hash_functions.FXMLDocumentController.panel1;
+import static hash_functions.FXMLDocumentController.bandera;
 import java.io.*;
 import java.util.*;
 public class Division{

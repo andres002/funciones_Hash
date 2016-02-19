@@ -38,18 +38,20 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private RadioButton modul, cuadra, plega, trunca, aani, encadena, rlineal, rcuadra, rdoble;
     @FXML
-    public static Pane panel1, panel2;
+    public Pane panel1, panel2;
     @FXML
     private TextField buscar;
     static public int opcHash = 0, opcCol = 0;
     static int[] datos;
     static int[] datosL;
-    public static int wea=0;
+    public static int wea = 0;
     static lineal li = new lineal();
     static cuadratico cu = new cuadratico();
     static Arre arre = new Arre();
     static Encadena cadena = new Encadena();
     private TextField dato;
+    Division d = new Division();
+    public static boolean bandera = false;
 
     @FXML
     private void openfile() {
@@ -72,13 +74,25 @@ public class FXMLDocumentController implements Initializable {
 
     }
 
-    private void modul() {
-        Division d = new Division();
-        d.setArray(datos);
-        d.calcula();
-        for (int i = 1; i < datosL.length; i++) {
-            System.out.println("id " + i + "dato: " + datosL[i]);
+    private void modul(int dato) {
+
+        if (!panel1.isDisable()) {
+            d.setArray(datos);
+            d.calcula();
+            for (int i = 1; i < datosL.length; i++) {
+                System.out.println("id " + i + "dato: " + datosL[i]);
+            }
+        }else{
+            int id = d.hash(dato);
+            Search s = new Search();
+            if(s.encontrar(id, dato)){
+                System.out.println("EL DATO FUE ENCONTRADO");
+            }else{
+                System.out.println("El dato no fue encontrado");
+            }
+            
         }
+
     }
 
     private void cuadra() {
@@ -101,62 +115,58 @@ public class FXMLDocumentController implements Initializable {
         plegas.setArray(datos);
         plegas.calcular();
     }
-    
-    private void DobleHash(){
-    DobleDireccionHash DoHash = new DobleDireccionHash();
-    DoHash.SetArray(datos);
-    DoHash.Calcular();
+
+    private void DobleHash() {
+        DobleDireccionHash DoHash = new DobleDireccionHash();
+        DoHash.SetArray(datos);
+        DoHash.Calcular();
     }
 
     @FXML
     private void opciones() {
-            if (!panel1.isDisable()) {
-                int algo = 0;
-                try{
+        int algo = 0;
+        if (panel1.isDisable()) {
+            bandera = true;
+            try {
                 algo = Integer.parseInt(buscar.getText());
-                }catch(Exception e){
-                    System.out.println("Excepcion---" + e);
-                }
+            } catch (Exception e) {
+                System.out.println("Excepcion---" + e);
             }
-        
+        }else{
+            bandera = false;
+        }
 
-            if (aani.isSelected()) {
-                opcCol = 1;
-                if (!panel1.isDisable()) {
+        if (aani.isSelected()) {
+            opcCol = 1;
+            if (!panel1.isDisable()) {
                 arre.cleanArray(datos.length);
-                }
             }
-            if (encadena.isSelected()) {
-                opcCol = 2;
-                if (!panel1.isDisable()) {
+        }
+        if (encadena.isSelected()) {
+            opcCol = 2;
+            if (!panel1.isDisable()) {
                 cadena.cleanList(datos.length);
-                }
             }
-            if (rlineal.isSelected()) {
-                opcCol = 3;
-                if (!panel1.isDisable()) {
-                }
+        }
+        if (rlineal.isSelected()) {
+            opcCol = 3;
+            if (!panel1.isDisable()) {
+            }
 
-            }
-            if (rcuadra.isSelected()) {
-                opcCol = 4;
-            }
-            if (rdoble.isSelected()) {
-                opcCol = 5;
-                 if (!panel1.isDisable()) {
+        }
+        if (rcuadra.isSelected()) {
+            opcCol = 4;
+        }
+        if (rdoble.isSelected()) {
+            opcCol = 5;
+            if (!panel1.isDisable()) {
                 DobleHash();
-                 }
             }
-        
+        }
 
         if (modul.isSelected()) {
             opcHash = 1;
-            if (!panel1.isDisable()) {
-                modul();
-            } else {
-                System.out.println("Holiwis :3");
-            }
-
+                modul(algo);
         }
 
         if (cuadra.isSelected()) {
@@ -189,7 +199,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void Busqueda() {
-        
+
     }
 
     @FXML
@@ -201,7 +211,7 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         panel1.setDisable(true);
-        panel2.setDisable(true);
+       panel2.setDisable(true);
     }
 
 }

@@ -17,9 +17,9 @@ import static hash_functions.FXMLDocumentController.opcCol;
  * @author Andres
  */
 public class Search {
-    public void encontrar(int id, int dato){
+    public boolean encontrar(int id, int dato){
         if (opcCol == 1) {
-            arre.soluColisions(id, dato);
+            return arre.searchDato(id, dato);
         }
 
         if (opcCol == 2) {
@@ -42,6 +42,8 @@ public class Search {
                 datosL[id] = dato;
             }
         }
+        return false;
     }
+    
 }
 

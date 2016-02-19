@@ -3,7 +3,7 @@ package functions;
 import hash_functions.Suit;
 import java.io.*;
 import java.util.*;
-import static hash_functions.FXMLDocumentController.panel1;
+import static hash_functions.FXMLDocumentController.bandera;
 
 public class Cuadrado {
 
@@ -142,7 +142,7 @@ public class Cuadrado {
         	h=h-n.length;
         }
         System.out.println("num: " + l + " id: " + h);
-        if(!panel1.isDisable()){        
+        if(bandera){        
             suit.acomodar(h,l);
         }else{
             
