@@ -52,6 +52,7 @@ public class FXMLDocumentController implements Initializable {
     private TextField dato;
     Division d = new Division();
     Cuadrado cuadrado = new Cuadrado();
+    Truncamiento truncas = new Truncamiento();
     public static boolean bandera = false;
 
     @FXML
@@ -113,10 +114,23 @@ public class FXMLDocumentController implements Initializable {
         }
     }
 
-    private void trunca() {
-        Truncamiento truncas = new Truncamiento();
+    private void trunca(int dato) {
+         if (!panel1.isDisable()) {
         truncas.setArray(datos);
         truncas.calcular();
+         }else{
+            int id = truncas.Truncar(dato);
+             System.out.println("este es el id que mando-----" + id);
+             System.out.println("este es el dato --------- " + dato);
+             Search s = new Search();
+            if(s.encontrar(id, dato)){
+                System.out.println("EL DATO FUE ENCONTRADO");
+            }else{
+                System.out.println("El dato no fue encontrado");
+            }
+            
+         }
+         
     }
 
     private void plega() {
@@ -193,11 +207,7 @@ public class FXMLDocumentController implements Initializable {
         }
         if (trunca.isSelected()) {
             opcHash = 4;
-            if (!panel1.isDisable()) {
-                trunca();
-            } else {
-
-            }
+                trunca(algo);
         }
         panel1.setDisable(true);
         panel2.setDisable(false);

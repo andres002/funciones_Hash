@@ -29,7 +29,7 @@ public class Truncamiento {
         System.out.println("Bienvenido");
 
         for (int i = 0; i < a.n.length; i++) {
-            res = a.Truncar(a.n[i], a.n.length); //este es el Id aquí se obtiene
+            res = a.Truncar(a.n[i]); //este es el Id aquí se obtiene
             System.out.println("id: " + res + " valor: " + a.n[i]);
         }
     }
@@ -41,14 +41,14 @@ public class Truncamiento {
     public void calcular() {
         int res;
         for (int i = 0; i < n.length; i++) {
-            res = Truncar(n[i], n.length); //este es el Id aquí se obtiene
+            res = Truncar(n[i]); //este es el Id aquí se obtiene
             suit.acomodar(n[i], res);
             System.out.println("id: " + res + " valor: " + n[i]);
         }
     }
 
-    public int Truncar(int clave, int tama) {
-
+    public int Truncar(int clave) {
+        int tama = n.length;
         int digitos = calculaD(clave);
         int id = GeneraId(clave, digitos, tama);
         return id;

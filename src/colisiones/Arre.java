@@ -30,6 +30,7 @@ public class Arre {
     public boolean searchDato(int id, int dato) {
 
         for (int x = 0; x < D[0].length; x++) {
+            System.out.println("este es lo que tiene el arreglo----- " + D[id][x]);
             if (D[id][x] == dato) {
                 return true;
             } else if(D[id][x+1] == '\0'){
