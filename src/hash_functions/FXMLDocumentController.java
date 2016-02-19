@@ -51,6 +51,7 @@ public class FXMLDocumentController implements Initializable {
     static Encadena cadena = new Encadena();
     private TextField dato;
     Division d = new Division();
+    Cuadrado cuadrado = new Cuadrado();
     public static boolean bandera = false;
 
     @FXML
@@ -95,12 +96,20 @@ public class FXMLDocumentController implements Initializable {
 
     }
 
-    private void cuadra() {
-        Cuadrado cuadrado = new Cuadrado();
-        cuadrado.setArray(datos);
-        cuadrado.calcula1();
-        for (int i = 1; i < datosL.length; i++) {
-            System.out.println("id " + i + "dato: " + datosL[i]);
+    private void cuadra(int dato) {
+        if (!panel1.isDisable()) {
+            cuadrado.setArray(datos);
+            cuadrado.calcula1();
+            for (int i = 1; i < datosL.length; i++) {
+                System.out.println("id " + i + "dato: " + datosL[i]);
+            }
+        }else{
+            if(cuadrado.calcula(dato)){
+                System.out.println("EL DATO FUE ENCONTRADO");
+            }else{
+                System.out.println("El dato no fue encontrado");
+            }
+            
         }
     }
 
@@ -171,11 +180,8 @@ public class FXMLDocumentController implements Initializable {
 
         if (cuadra.isSelected()) {
             opcHash = 2;
-            if (!panel1.isDisable()) {
-                cuadra();
-            } else {
+                cuadra(algo);
 
-            }
         }
         if (plega.isSelected()) {
             opcHash = 3;

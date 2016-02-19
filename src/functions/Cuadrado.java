@@ -4,6 +4,7 @@ import hash_functions.Suit;
 import java.io.*;
 import java.util.*;
 import static hash_functions.FXMLDocumentController.bandera;
+import hash_functions.Search;
 
 public class Cuadrado {
 
@@ -78,7 +79,7 @@ public class Cuadrado {
         return resultado;
     }
 
-    public void calcula(int l) {
+    public boolean calcula(int l) {
         int cont = 0;
 
         int h;
@@ -142,11 +143,14 @@ public class Cuadrado {
         	h=h-n.length;
         }
         System.out.println("num: " + l + " id: " + h);
-        if(bandera){        
+        if(!bandera){        
             suit.acomodar(h,l);
+            return true;
         }else{
-            
+            Search s = new Search();
+            return s.encontrar(h,l );
         }
+
     }
     
     public void calcula1 (){
