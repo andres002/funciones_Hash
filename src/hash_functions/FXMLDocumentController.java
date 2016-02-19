@@ -53,6 +53,7 @@ public class FXMLDocumentController implements Initializable {
     Division d = new Division();
     Cuadrado cuadrado = new Cuadrado();
     Truncamiento truncas = new Truncamiento();
+    Plegamiento plegas = new Plegamiento();
     public static boolean bandera = false;
 
     @FXML
@@ -133,10 +134,20 @@ public class FXMLDocumentController implements Initializable {
          
     }
 
-    private void plega() {
-        Plegamiento plegas = new Plegamiento();
-        plegas.setArray(datos);
-        plegas.calcular();
+    private void plega(int dato) {
+        if (!panel1.isDisable()) {
+            plegas.setArray(datos);
+            plegas.calcular();
+        }else{
+            int id = plegas.plegamiento(dato);
+            Search s = new Search();
+            if(s.encontrar(id,dato)){
+                System.out.println("EL DATO FUE ENCONTRADO");
+            }else{
+                System.out.println("El dato no fue encontrado");
+            }
+        }
+        
     }
 
     private void DobleHash() {
@@ -199,11 +210,8 @@ public class FXMLDocumentController implements Initializable {
         }
         if (plega.isSelected()) {
             opcHash = 3;
-            if (!panel1.isDisable()) {
-                plega();
-            } else {
+                plega(algo);
 
-            }
         }
         if (trunca.isSelected()) {
             opcHash = 4;
