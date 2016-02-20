@@ -26,21 +26,12 @@ public class Search {
             return cadena.searchDato(id, dato);
         }
         if (opcCol == 3) {
-            if (datosL[id] != '\0') {
-                System.out.println("colision rLineal");
-                System.out.println("dato: " + dato);
-                li.lineal(id, datosL, dato);
-            } else {
-                datosL[id] = dato;
-            }
+            return li.linealB(id, dato,datosL);
+            
 
         }
         if (opcCol == 4) {
-            if (datosL[id] != '\0') {
-                cu.cuadratico(id, datosL, dato);
-            } else {
-                datosL[id] = dato;
-            }
+            return cu.cuadraticoB(id,dato, datosL);
         }
         return false;
     }

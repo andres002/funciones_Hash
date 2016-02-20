@@ -185,12 +185,17 @@ public class FXMLDocumentController implements Initializable {
         }
         if (rlineal.isSelected()) {
             opcCol = 3;
+          
             if (!panel1.isDisable()) {
+                 datosL = new int[datosL.length];
             }
 
         }
         if (rcuadra.isSelected()) {
             opcCol = 4;
+             if (!panel1.isDisable()) {
+                 datosL = new int[datosL.length];
+            }
         }
         if (rdoble.isSelected()) {
             opcCol = 5;
