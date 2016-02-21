@@ -10,7 +10,11 @@ package colisiones;
  * @author Javier
  */
 public class lineal {
-
+    int cont = 0;
+    
+    public int getComplejidad(){
+        return cont;
+    }
     /**
      *
      * @param d id hash
@@ -25,6 +29,7 @@ public class lineal {
         System.out.println("d: " + d);
         System.out.println("k" + k);
         if (v[d] == k) {
+            cont++;
             System.out.println("true");
             return true;
         } else {
@@ -35,6 +40,7 @@ public class lineal {
             //   while (dx <= N && v[dx] != k && dx != d) {
             while (dx <= N && v[dx] != k && dx != d) {
                 dx = dx + 1;
+                cont++;
                 if (dx == N + 1) {
                     dx = 1;
                 }
@@ -42,6 +48,7 @@ public class lineal {
             System.out.println("dx: " + dx);
             
             if (v[dx] == k) {
+                cont++;
                 System.out.println("El elemento esta en la posicion " + dx);
                 return true;
 
