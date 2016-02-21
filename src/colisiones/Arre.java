@@ -33,8 +33,8 @@ public class Arre {
             System.out.println("este es lo que tiene el arreglo----- " + D[id][x]);
             if (D[id][x] == dato) {
                 return true;
-            } else if(D[id][x+1] == '\0'){
-               return false;
+            } else if (D[id][x + 1] == '\0') {
+                return false;
             }
         }
         return false;

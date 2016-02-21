@@ -8,9 +8,12 @@ import hash_functions.Search;
 
 public class Cuadrado {
 
-    static int[] n;
+    int[] n;
+    int h;
     int resultado = 0;
     Suit suit = new Suit();
+    public int[] datos;
+    public int[] ids;
 
     public void setArray(int[] n) {
         this.n = n;
@@ -81,23 +84,18 @@ public class Cuadrado {
 
     public boolean calcula(int l) {
         int cont = 0;
-
-        int h;
         int k = l;
         int dig = 0;
-
         String k1;
         k = (int) Math.pow(k, 2);
         k1 = k + "";
-        if (k==0){
+        if (k == 0) {
             cont++;
         }
-        
         while (k > 0) {
             k = k / 10;
             cont++;
         }
-       
 
         if (n.length > 0 && n.length <= 10) {
             digitos(1, k1, cont);
@@ -144,24 +142,35 @@ public class Cuadrado {
             }
         }
         h = getResultado() + 1;
-         while(h>n.length){
-        	h=h-n.length;
+        while (h > n.length) {
+            h = h - n.length;
         }
         System.out.println("num: " + l + " id: " + h);
-        if(!bandera){        
-            suit.acomodar(h,l);
+        if (!bandera) {
+            suit.acomodar(h, l);
             return true;
-        }else{
+        } else {
             Search s = new Search();
-            return s.encontrar(h,l );
+            return s.encontrar(h, l);
         }
-
     }
-    
-    public void calcula1 (){
+
+    public int[] getDatos() {
+        return datos;
+    }
+
+    public int[] getIds() {
+        return ids;
+    }
+
+    public void calcula1() {
+        datos = new int[n.length];
+        ids = new int[n.length];
         for (int i = 0; i < n.length; i++) {
             calcula(n[i]);
+            datos[i] = n[i];
+            ids[i] = h;
         }
-        
+
     }
 }

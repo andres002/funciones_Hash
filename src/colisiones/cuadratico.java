@@ -11,23 +11,23 @@ package colisiones;
  */
 public class cuadratico {
 
-    public boolean cuadraticoB(int d,int k, int[] v) {
+    public boolean cuadraticoB(int d, int k, int[] v) {
         if (v[d] == k) {
             System.out.println("El elemento esta en la posicion " + d);
             return true;
         } else {
-             int i = 1;
-        int dx = (int) (d + Math.pow(i, 2));
-        while (v[dx] != '\0' && v[dx] != k) {        
-            i = i + 1;
-            dx = (int) (d + Math.pow(i, 2));
-            System.out.println("dx "+dx);
-            if (dx > v.length) {
-                i = 0;
-                dx = 1;
-                d = 1;
+            int i = 1;
+            int dx = (int) (d + Math.pow(i, 2));
+            while (v[dx] != '\0' && v[dx] != k) {
+                i = i + 1;
+                dx = (int) (d + Math.pow(i, 2));
+                System.out.println("dx " + dx);
+                if (dx > v.length) {
+                    i = 0;
+                    dx = 1;
+                    d = 1;
+                }
             }
-        }
             if (v[dx] == k) {
                 System.out.println("El elemento esta en la posicion " + dx);
                 return true;
@@ -44,10 +44,10 @@ public class cuadratico {
 
         int i = 1;
         int dx = (int) (d + Math.pow(i, 2));
-        while (v[dx] != '\0') {        
+        while (v[dx] != '\0') {
             i = i + 1;
             dx = (int) (d + Math.pow(i, 2));
-            System.out.println("dx "+dx);
+            System.out.println("dx " + dx);
             if (dx > v.length) {
                 i = 0;
                 dx = 1;

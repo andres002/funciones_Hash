@@ -17,8 +17,14 @@ import static hash_functions.FXMLDocumentController.opcCol;
  * @author Andres
  */
 public class Search {
-    public boolean encontrar(int id, int dato){
+
+    public int id;
+    public int dato;
+
+    public boolean encontrar(int id, int dato) {
         if (opcCol == 1) {
+            id = id;
+            dato = dato;
             return arre.searchDato(id, dato);
         }
 
@@ -26,15 +32,13 @@ public class Search {
             return cadena.searchDato(id, dato);
         }
         if (opcCol == 3) {
-            return li.linealB(id, dato,datosL);
-            
+            return li.linealB(id, dato, datosL);
 
         }
         if (opcCol == 4) {
-            return cu.cuadraticoB(id,dato, datosL);
+            return cu.cuadraticoB(id, dato, datosL);
         }
         return false;
     }
-    
-}
 
+}

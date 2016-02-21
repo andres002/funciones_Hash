@@ -20,6 +20,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
@@ -40,6 +41,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public Pane panel1, panel2;
     @FXML
+    public TextArea datoh, idh;
+    @FXML
     private TextField buscar;
     static public int opcHash = 0, opcCol = 0;
     static int[] datos;
@@ -54,7 +57,9 @@ public class FXMLDocumentController implements Initializable {
     Cuadrado cuadrado = new Cuadrado();
     Truncamiento truncas = new Truncamiento();
     Plegamiento plegas = new Plegamiento();
+    Search search = new Search();
     public static boolean bandera = false;
+    public int tam;
 
     @FXML
     private void openfile() {
@@ -72,6 +77,7 @@ public class FXMLDocumentController implements Initializable {
             datos = a.AllLines(lineas);
             datosL = new int[datos.length + 1];
             panel1.setDisable(false);
+            tam = lineas;
 
         }
 
@@ -85,15 +91,15 @@ public class FXMLDocumentController implements Initializable {
             for (int i = 1; i < datosL.length; i++) {
                 System.out.println("id " + i + "dato: " + datosL[i]);
             }
-        }else{
+        } else {
             int id = d.hash(dato);
             Search s = new Search();
-            if(s.encontrar(id, dato)){
+            if (s.encontrar(id, dato)) {
                 System.out.println("EL DATO FUE ENCONTRADO");
-            }else{
+            } else {
                 System.out.println("El dato no fue encontrado");
             }
-            
+
         }
 
     }
@@ -105,50 +111,51 @@ public class FXMLDocumentController implements Initializable {
             for (int i = 1; i < datosL.length; i++) {
                 System.out.println("id " + i + "dato: " + datosL[i]);
             }
-        }else{
-            if(cuadrado.calcula(dato)){
+        } else {
+            if (cuadrado.calcula(dato)) {
                 System.out.println("EL DATO FUE ENCONTRADO");
-            }else{
+                System.out.println(search);
+            } else {
                 System.out.println("El dato no fue encontrado");
             }
-            
+
         }
     }
 
     private void trunca(int dato) {
-         if (!panel1.isDisable()) {
-        truncas.setArray(datos);
-        truncas.calcular();
-         }else{
+        if (!panel1.isDisable()) {
+            truncas.setArray(datos);
+            truncas.calcular();
+        } else {
             int id = truncas.Truncar(dato);
-             System.out.println("este es el id que mando-----" + id);
-             System.out.println("este es el dato --------- " + dato);
-             Search s = new Search();
-            if(s.encontrar(id, dato)){
+            System.out.println("este es el id que mando-----" + id);
+            System.out.println("este es el dato --------- " + dato);
+            Search s = new Search();
+            if (s.encontrar(id, dato)) {
                 System.out.println("EL DATO FUE ENCONTRADO");
-            }else{
+            } else {
                 System.out.println("El dato no fue encontrado");
             }
-            
-         }
-         
+
+        }
+
     }
 
     private void plega(int dato) {
         if (!panel1.isDisable()) {
             plegas.setArray(datos);
             plegas.calcular();
-        }else{
+        } else {
             int id = plegas.plegamiento(dato);
             System.out.println("este es el id que me manda ***** " + id);
             Search s = new Search();
-            if(s.encontrar(id,dato)){
+            if (s.encontrar(id, dato)) {
                 System.out.println("EL DATO FUE ENCONTRADO");
-            }else{
+            } else {
                 System.out.println("El dato no fue encontrado");
             }
         }
-        
+
     }
 
     private void DobleHash() {
@@ -167,7 +174,7 @@ public class FXMLDocumentController implements Initializable {
             } catch (Exception e) {
                 System.out.println("Excepcion---" + e);
             }
-        }else{
+        } else {
             bandera = false;
         }
 
@@ -185,16 +192,16 @@ public class FXMLDocumentController implements Initializable {
         }
         if (rlineal.isSelected()) {
             opcCol = 3;
-          
+
             if (!panel1.isDisable()) {
-                 datosL = new int[datosL.length];
+                datosL = new int[datosL.length];
             }
 
         }
         if (rcuadra.isSelected()) {
             opcCol = 4;
-             if (!panel1.isDisable()) {
-                 datosL = new int[datosL.length];
+            if (!panel1.isDisable()) {
+                datosL = new int[datosL.length];
             }
         }
         if (rdoble.isSelected()) {
@@ -206,22 +213,41 @@ public class FXMLDocumentController implements Initializable {
 
         if (modul.isSelected()) {
             opcHash = 1;
-                modul(algo);
+            datoh.setText(" ");
+            idh.setText(" ");
+            modul(algo);
+            for (int x = 0; x < d.datos.length; x++) {
+                datoh.setText(datoh.getText() + d.datos[x] + "\n");
+                idh.setText(idh.getText() + d.ids[x] + "\n");
+            }
         }
 
         if (cuadra.isSelected()) {
             opcHash = 2;
-                cuadra(algo);
+            datoh.setText(" ");
+            idh.setText(" ");
+            cuadra(algo);
+            for (int x = 0; x < cuadrado.datos.length; x++) {
+                datoh.setText(datoh.getText() + cuadrado.datos[x] + "\n");
+                idh.setText(idh.getText() + cuadrado.ids[x] + "\n");
+            }
 
         }
         if (plega.isSelected()) {
             opcHash = 3;
-                plega(algo);
+            datoh.setText(" ");
+            idh.setText(" ");
+            plega(algo);
+            for (int x = 0; x < plegas.datos.length; x++) {
+                datoh.setText(datoh.getText() + plegas.datos[x] + "\n");
+                idh.setText(idh.getText() + plegas.ids[x] + "\n");
+            }
 
         }
         if (trunca.isSelected()) {
             opcHash = 4;
-                trunca(algo);
+            trunca(algo);
+
         }
         panel1.setDisable(true);
         panel2.setDisable(false);
@@ -241,7 +267,7 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         panel1.setDisable(true);
-       panel2.setDisable(true);
+        panel2.setDisable(true);
     }
 
 }

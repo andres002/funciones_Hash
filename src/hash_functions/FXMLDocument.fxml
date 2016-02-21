@@ -1,63 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="613.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hash_functions.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hash_functions.FXMLDocumentController">
     <children>
-      <Pane fx:id="panel1" prefHeight="282.0" prefWidth="593.0">
-         <children>
-            <RadioButton fx:id="cuadra" layoutX="40.0" layoutY="98.0" mnemonicParsing="false" text="Cuadrado">
-               <toggleGroup>
-                  <ToggleGroup fx:id="hash" />
-               </toggleGroup>
-            </RadioButton>
-            <RadioButton fx:id="modul" layoutX="40.0" layoutY="67.0" mnemonicParsing="false" selected="true" text="Modulo" toggleGroup="$hash" />
-            <RadioButton fx:id="plega" layoutX="40.0" layoutY="128.0" mnemonicParsing="false" text="Plegamiento" toggleGroup="$hash" />
-            <RadioButton fx:id="trunca" layoutX="40.0" layoutY="159.0" mnemonicParsing="false" text="Truncamiento" toggleGroup="$hash" />
-            <RadioButton fx:id="aani" layoutX="309.0" layoutY="67.0" mnemonicParsing="false" selected="true" text="Arreglos Anidados">
-               <toggleGroup>
-                  <ToggleGroup fx:id="col" />
-               </toggleGroup>
-            </RadioButton>
-            <RadioButton fx:id="encadena" layoutX="309.0" layoutY="98.0" mnemonicParsing="false" text="Encadenamiento" toggleGroup="$col" />
-            <RadioButton fx:id="rlineal" layoutX="310.0" layoutY="128.0" mnemonicParsing="false" text="Reasignación lineal" toggleGroup="$col" />
-            <RadioButton fx:id="rcuadra" layoutX="309.0" layoutY="159.0" mnemonicParsing="false" text="Reasignación cuadrática" toggleGroup="$col" />
-            <RadioButton fx:id="rdoble" layoutX="309.0" layoutY="196.0" mnemonicParsing="false" text="Reasiganación doble dirección Hash" toggleGroup="$col" />
-            <Label layoutX="35.0" layoutY="38.0" text="Funciones Hash" />
-            <Label layoutX="350.0" layoutY="38.0" text="Colisiones" />
-            <Button fx:id="constTabla" layoutX="248.0" layoutY="245.0" mnemonicParsing="false" onAction="#opciones" text="Construir Tabla" />
-         </children>
-      </Pane>
-      <Pane fx:id="panel2" layoutY="283.0" prefHeight="324.0" prefWidth="593.0">
-         <children>
-            <Label layoutX="41.0" layoutY="30.0" text="Ingrese el dato a buscar" />
-            <TextField fx:id="buscar" layoutX="242.0" layoutY="26.0" prefHeight="25.0" prefWidth="188.0" />
-            <Button layoutX="507.0" layoutY="26.0" mnemonicParsing="false" onAction="#opciones" text="Buscar" />
-            <Button fx:id="funcr" layoutX="244.0" layoutY="78.0" mnemonicParsing="false" onAction="#restart" text="Cambiar Funcion" />
-         </children>
-      </Pane>
-      <MenuBar prefHeight="28.0" prefWidth="593.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Archivo">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#openfile" text="Leer Archivo" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
+        <Pane fx:id="panel1" prefHeight="282.0" prefWidth="593.0">
+            <children>
+                <RadioButton fx:id="cuadra" layoutX="40.0" layoutY="98.0" mnemonicParsing="false" text="Cuadrado">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="hash" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="modul" layoutX="40.0" layoutY="67.0" mnemonicParsing="false" selected="true" text="Modulo" toggleGroup="$hash" />
+                <RadioButton fx:id="plega" layoutX="40.0" layoutY="128.0" mnemonicParsing="false" text="Plegamiento" toggleGroup="$hash" />
+                <RadioButton fx:id="trunca" layoutX="40.0" layoutY="159.0" mnemonicParsing="false" text="Truncamiento" toggleGroup="$hash" />
+                <RadioButton fx:id="aani" layoutX="309.0" layoutY="67.0" mnemonicParsing="false" selected="true" text="Arreglos Anidados">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="col" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="encadena" layoutX="309.0" layoutY="98.0" mnemonicParsing="false" text="Encadenamiento" toggleGroup="$col" />
+                <RadioButton fx:id="rlineal" layoutX="310.0" layoutY="128.0" mnemonicParsing="false" text="Reasignación lineal" toggleGroup="$col" />
+                <RadioButton fx:id="rcuadra" layoutX="309.0" layoutY="159.0" mnemonicParsing="false" text="Reasignación cuadrática" toggleGroup="$col" />
+                <RadioButton fx:id="rdoble" layoutX="309.0" layoutY="196.0" mnemonicParsing="false" text="Reasiganación doble dirección Hash" toggleGroup="$col" />
+                <Label layoutX="35.0" layoutY="38.0" text="Funciones Hash" />
+                <Label layoutX="350.0" layoutY="38.0" text="Colisiones" />
+                <Button fx:id="constTabla" layoutX="248.0" layoutY="245.0" mnemonicParsing="false" onAction="#opciones" text="Construir Tabla" />
+            </children>
+        </Pane>
+        <Pane fx:id="panel2" layoutY="283.0" prefHeight="235.0" prefWidth="593.0">
+            <children>
+                <Label layoutX="41.0" layoutY="30.0" text="Ingrese el dato a buscar" />
+                <TextField fx:id="buscar" layoutX="242.0" layoutY="26.0" prefHeight="25.0" prefWidth="188.0" />
+                <Button layoutX="507.0" layoutY="26.0" mnemonicParsing="false" onAction="#opciones" text="Buscar" />
+                <Button fx:id="funcr" layoutX="273.0" layoutY="78.0" mnemonicParsing="false" onAction="#restart" text="Cambiar Funcion" />
+            </children>
+        </Pane>
+        <MenuBar prefHeight="28.0" prefWidth="593.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Archivo">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openfile" text="Leer Archivo" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TextArea fx:id="datoh" editable="false" layoutX="605.0" layoutY="85.0" prefHeight="431.0" prefWidth="87.0" />
+        <TextArea fx:id="idh" editable="false" layoutX="704.0" layoutY="85.0" prefHeight="431.0" prefWidth="73.0" />
+        <Text layoutX="656.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Función Hash">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <Text layoutX="637.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datos:" />
+        <Text layoutX="727.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IDs:" />
     </children>
 </AnchorPane>
