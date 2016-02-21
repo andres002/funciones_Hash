@@ -20,6 +20,7 @@ public class lineal {
     public boolean linealB(int d, int k, int[] v) {
 
         int N = v.length - 1;
+        System.out.println("N: "+N);
         int dx = 0;
         System.out.println("d: " + d);
         System.out.println("k" + k);
@@ -28,6 +29,9 @@ public class lineal {
             return true;
         } else {
             dx = d + 1;
+            if (dx == N + 1) {
+                dx = 1;
+            }
             //   while (dx <= N && v[dx] != k && dx != d) {
             while (dx <= N && v[dx] != k && dx != d) {
                 dx = dx + 1;
@@ -36,6 +40,7 @@ public class lineal {
                 }
             }
             System.out.println("dx: " + dx);
+            
             if (v[dx] == k) {
                 System.out.println("El elemento esta en la posicion " + dx);
                 return true;
