@@ -41,7 +41,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public Pane panel1, panel2;
     @FXML
-    public TextArea datoh, idh;
+    public TextArea datoh, idh, idc;
     @FXML
     public TextArea busquedaTxt;
     @FXML
@@ -257,6 +257,10 @@ public class FXMLDocumentController implements Initializable {
         if (trunca.isSelected()) {
             opcHash = 4;
             trunca(algo);
+            for (int x = 0; x < truncas.datos.length; x++) {
+                datoh.setText(datoh.getText() + truncas.datos[x] + "\n");
+                idh.setText(idh.getText() + truncas.ids[x] + "\n");
+            }
 
         }
         panel1.setDisable(true);

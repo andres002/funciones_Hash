@@ -35,7 +35,7 @@ public class cuadratico {
                 i = i + 1;
                 dx = (int) (d + Math.pow(i, 2));
                 System.out.println("dx " + dx);
-                if (dx > v.length) {
+                if (dx > v.length-1) {
                     i = 0;
                     dx = 1;
                     d = 1;
@@ -60,11 +60,17 @@ public class cuadratico {
 
         int i = 1;
         int dx = (int) (d + Math.pow(i, 2));
+        if (dx > v.length-1) {
+               
+                dx = 1;
+             
+            }
+        System.out.println(v.length + "ee" +dx);
         while (v[dx] != '\0') {
             i = i + 1;
             dx = (int) (d + Math.pow(i, 2));
             System.out.println("dx " + dx);
-            if (dx > v.length) {
+            if (dx > v.length-1) {
                 i = 0;
                 dx = 1;
                 d = 1;
