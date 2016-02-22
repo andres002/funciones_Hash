@@ -43,6 +43,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public TextArea datoh, idh;
     @FXML
+    public TextArea busquedaTxt;
+    @FXML
     private TextField buscar;
     static public int opcHash = 0, opcCol = 0;
     static int[] datos;
@@ -95,8 +97,10 @@ public class FXMLDocumentController implements Initializable {
             int id = d.hash(dato);
             Search s = new Search();
             if (s.encontrar(id, dato)) {
+                busquedaTxt.setText("El dato fue encontrado en la posicion "+s.getPosicion() +"\nLa complejidad es" +s.getComplejidad());
                 System.out.println("EL DATO FUE ENCONTRADO");
             } else {
+                busquedaTxt.setText("El dato no fue encontrado. \nLa complejidad es" +s.getComplejidad());
                 System.out.println("El dato no fue encontrado");
             }
 
@@ -150,8 +154,11 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("este es el id que me manda ***** " + id);
             Search s = new Search();
             if (s.encontrar(id, dato)) {
+                busquedaTxt.setText("El dato fue encontrado en la posicion "+s.getPosicion() +"\nLa complejidad es" +s.getComplejidad());
                 System.out.println("EL DATO FUE ENCONTRADO");
             } else {
+                 busquedaTxt.setText("El dato no fue encontrado. \nLa complejidad es" +s.getComplejidad());
+                
                 System.out.println("El dato no fue encontrado");
             }
         }
@@ -194,7 +201,9 @@ public class FXMLDocumentController implements Initializable {
             opcCol = 3;
 
             if (!panel1.isDisable()) {
+                
                 datosL = new int[datosL.length];
+               
             }
 
         }

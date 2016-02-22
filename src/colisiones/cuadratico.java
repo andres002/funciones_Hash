@@ -10,15 +10,28 @@ package colisiones;
  * @author Javier
  */
 public class cuadratico {
+    int complejidad = 0;
+    int posicion = -1;
+    
+    public int getPosicion(){
+        return posicion;
+    }
+    public int getComplejidad(){
+        return complejidad;
+    }
 
     public boolean cuadraticoB(int d, int k, int[] v) {
+        complejidad= 0;
         if (v[d] == k) {
+            posicion = d;
+            complejidad++;
             System.out.println("El elemento esta en la posicion " + d);
             return true;
         } else {
             int i = 1;
             int dx = (int) (d + Math.pow(i, 2));
             while (v[dx] != '\0' && v[dx] != k) {
+                complejidad++;
                 i = i + 1;
                 dx = (int) (d + Math.pow(i, 2));
                 System.out.println("dx " + dx);
@@ -29,10 +42,13 @@ public class cuadratico {
                 }
             }
             if (v[dx] == k) {
+                complejidad++;
+                posicion = dx;
                 System.out.println("El elemento esta en la posicion " + dx);
                 return true;
 
             } else {
+                posicion = -1;
                 System.out.println("El elemento no esta en el arreglo");
                 return false;
             }

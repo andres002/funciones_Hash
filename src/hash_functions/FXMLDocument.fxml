@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hash_functions.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hash_functions.FXMLDocumentController">
     <children>
         <Pane fx:id="panel1" prefHeight="282.0" prefWidth="593.0">
             <children>
@@ -33,10 +33,11 @@
         </Pane>
         <Pane fx:id="panel2" layoutY="283.0" prefHeight="235.0" prefWidth="593.0">
             <children>
-                <Label layoutX="41.0" layoutY="30.0" text="Ingrese el dato a buscar" />
-                <TextField fx:id="buscar" layoutX="242.0" layoutY="26.0" prefHeight="25.0" prefWidth="188.0" />
+                <Label layoutX="41.0" layoutY="30.0" text="Ingrese el dato a buscar :" />
+                <TextField fx:id="buscar" layoutX="182.0" layoutY="26.0" prefHeight="25.0" prefWidth="302.0" />
                 <Button layoutX="507.0" layoutY="26.0" mnemonicParsing="false" onAction="#opciones" text="Buscar" />
-                <Button fx:id="funcr" layoutX="273.0" layoutY="78.0" mnemonicParsing="false" onAction="#restart" text="Cambiar Funcion" />
+                <Button fx:id="funcr" layoutX="244.0" layoutY="168.0" mnemonicParsing="false" onAction="#restart" text="Cambiar Funcion" />
+            <TextArea fx:id="busquedaTxt" layoutX="23.0" layoutY="73.0" prefHeight="67.0" prefWidth="548.0" />
             </children>
         </Pane>
         <MenuBar prefHeight="28.0" prefWidth="593.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
