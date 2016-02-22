@@ -3,7 +3,8 @@ package colisiones;
 public class Arre {
 
     int[][] D;
-    int tamano;
+    int tamano, complejidad;
+    String posicion;
 
     public void soluColisions(int position, int dato) {
         boolean bandera = false;
@@ -22,6 +23,14 @@ public class Arre {
         }
         System.out.println("El dato quedo guardado en la posicion: " + position + ", " + x);
     }
+    
+    public String getPosicion(){
+        return this.posicion;
+    }
+    
+    public int getComplejidad(){
+        return this.complejidad;
+    }
 
     public int[][] getArray() {
         return D;
@@ -31,7 +40,9 @@ public class Arre {
 
         for (int x = 0; x < D[0].length; x++) {
             System.out.println("este es lo que tiene el arreglo----- " + D[id][x]);
+            this.complejidad = x;
             if (D[id][x] == dato) {
+                this.posicion = "[" + id + "]" + "[" + x + "]";
                 return true;
             } else if (D[id][x + 1] == '\0') {
                 return false;

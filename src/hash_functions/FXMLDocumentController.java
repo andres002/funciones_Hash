@@ -26,6 +26,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import leerArchivo.AllLines;
+import static functions.Cuadrado.s2;
 
 /**
  *
@@ -117,9 +118,12 @@ public class FXMLDocumentController implements Initializable {
             }
         } else {
             if (cuadrado.calcula(dato)) {
+                 busquedaTxt.setText("El dato fue encontrado en la posicion "+s2.getPosicion() +"\nLa complejidad es" +s2.getComplejidad());
+               
                 System.out.println("EL DATO FUE ENCONTRADO");
                 System.out.println(search);
             } else {
+                 busquedaTxt.setText("El dato no fue encontrado. \nLa complejidad es" +s2.getComplejidad());
                 System.out.println("El dato no fue encontrado");
             }
 
@@ -136,8 +140,11 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("este es el dato --------- " + dato);
             Search s = new Search();
             if (s.encontrar(id, dato)) {
+                 busquedaTxt.setText("El dato fue encontrado en la posicion "+s.getPosicion() +"\nLa complejidad es" +s.getComplejidad());
+                
                 System.out.println("EL DATO FUE ENCONTRADO");
             } else {
+                 busquedaTxt.setText("El dato no fue encontrado. \nLa complejidad es" +s.getComplejidad());
                 System.out.println("El dato no fue encontrado");
             }
 

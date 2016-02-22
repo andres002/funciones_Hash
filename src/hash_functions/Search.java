@@ -41,30 +41,30 @@ public class Search {
         }
         return false;
     }
-    public int getPosicion(){
+    public String getPosicion(){
         if (opcCol == 1) {
-            
+            return arre.getPosicion();
         }
 
         if (opcCol == 2) {
-           
+           return cadena.getPosicion();
         }
         if (opcCol == 3) {
-            return li.getPosicion();
+            return li.getPosicion()+"";
 
         }
         if (opcCol == 4) {
-            return cu.getPosicion();
+            return cu.getPosicion()+"";
         }
-        return -1;
+        return "-1";
     }
     public int getComplejidad(){
         if (opcCol == 1) {
-            
+            return arre.getComplejidad();
         }
 
         if (opcCol == 2) {
-           
+           return cadena.getComplejidad();
         }
         if (opcCol == 3) {
             return li.getComplejidad();

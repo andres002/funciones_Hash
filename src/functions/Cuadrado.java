@@ -7,7 +7,7 @@ import static hash_functions.FXMLDocumentController.bandera;
 import hash_functions.Search;
 
 public class Cuadrado {
-
+    public static Search s2 = new Search();
     int[] n;
     int h;
     int resultado = 0;
@@ -150,8 +150,7 @@ public class Cuadrado {
             suit.acomodar(h, l);
             return true;
         } else {
-            Search s = new Search();
-            return s.encontrar(h, l);
+            return s2.encontrar(h, l);
         }
     }
 

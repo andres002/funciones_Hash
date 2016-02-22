@@ -3,7 +3,8 @@ package colisiones;
 public class Encadena {
 
     ListaSimple ls;
-    int tamano;
+    int tamano, complejidad;
+    String posicion;
 
     public void soluColisions(int position, int dato) {
         ListaSimple ls2 = (ListaSimple) ls.get(position).getData();
@@ -21,11 +22,21 @@ public class Encadena {
     public boolean searchDato(int id, int dato) {
         ListaSimple ls2 = (ListaSimple) ls.get(id).getData();
         for (int x = 1; x <= ls2.size(); x++) {
+            this.complejidad = x;
             if ((int) ls2.get(x).getData() == dato) {
+                posicion = "[" + id + "]" + "[" + x + "]";
                 return true;
             }
         }
         return false;
+    }
+    
+    public int getComplejidad(){
+        return this.complejidad;
+    }
+    
+      public String getPosicion(){
+        return this.posicion;
     }
 
     /*	public static void main(String[] args) {
