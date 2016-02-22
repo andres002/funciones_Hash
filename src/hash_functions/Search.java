@@ -20,6 +20,7 @@ public class Search {
 
     public int id;
     public int dato;
+    
 
     public boolean encontrar(int id, int dato) {
         if (opcCol == 1) {
@@ -39,6 +40,40 @@ public class Search {
             return cu.cuadraticoB(id, dato, datosL);
         }
         return false;
+    }
+    public int getPosicion(){
+        if (opcCol == 1) {
+            
+        }
+
+        if (opcCol == 2) {
+           
+        }
+        if (opcCol == 3) {
+            return li.getPosicion();
+
+        }
+        if (opcCol == 4) {
+            return cu.getPosicion();
+        }
+        return -1;
+    }
+    public int getComplejidad(){
+        if (opcCol == 1) {
+            
+        }
+
+        if (opcCol == 2) {
+           
+        }
+        if (opcCol == 3) {
+            return li.getComplejidad();
+
+        }
+        if (opcCol == 4) {
+            return cu.getComplejidad();
+        }
+        return -1;
     }
 
 }
