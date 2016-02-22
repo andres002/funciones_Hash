@@ -216,7 +216,8 @@ public class FXMLDocumentController implements Initializable {
         if (rdoble.isSelected()) {
             opcCol = 5;
             if (!panel1.isDisable()) {
-                DobleHash();
+                datosL = new int[datosL.length];
+                //DobleHash();
             }
         }
 
