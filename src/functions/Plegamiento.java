@@ -101,17 +101,19 @@ public class Plegamiento {
             } else {
                 suma = clave+1;
             }
-            if(suma > n.length)
-            return suma-n.length;
+           
 
         }
 
         if (clave1 == 0) {
             return clave + 1;
         }
-        if(suma > n.length)
-            return suma-n.length;
-        return suma;
+        while(suma > n.length){
+             suma =suma-n.length;
+        }
+           
+            return suma;
+       
 
     }
 
