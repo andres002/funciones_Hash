@@ -263,7 +263,7 @@ public class Truncamiento {
                 convert = (Integer.parseInt(union)) + 1;
                if(clave>n.length){
                    while(clave>n.length){
-                       clave=clave-n.length;
+                       convert=convert-n.length;
                    }
                }
                return convert;
