@@ -1,7 +1,7 @@
 package colisiones;
 
 public class Arre {
-
+    Integer aux[][];
     int[][] D;
     int tamano, complejidad;
     String posicion;
@@ -9,18 +9,19 @@ public class Arre {
     public void soluColisions(int position, int dato) {
         boolean bandera = false;
         int x = 1;
-        if (D[position][x] == '\0') {
-            D[position][x] = dato;
+        if (aux[position][x] == null) {
+            aux[position][x] = dato;
 
         } else {
             while (bandera == false) {
                 x++;
-                if (D[position][x] == '\0') {
-                    D[position][x] = dato;
+                if (aux[position][x] == null) {
+                    aux[position][x] = dato;
                     bandera = true;
                 }
             }
         }
+        System.out.println("lo que se guarda en auxiliar baia baia " + aux[position][x] );
         System.out.println("El dato quedo guardado en la posicion: " + position + ", " + x);
     }
     
@@ -32,19 +33,35 @@ public class Arre {
         return this.complejidad;
     }
 
-    public int[][] getArray() {
+    /*public int[][] getArray() {
+        for (int x = 1; x <= tamano; x++) {
+            for (int y = 1; y <= tamano; y++) {
+
+                D[x][y] =aux[x][y].intValue();
+            }
+
+        }
         return D;
-    }
+    }*/
 
     public boolean searchDato(int id, int dato) {
 
-        for (int x = 0; x < D[0].length; x++) {
-            System.out.println("este es lo que tiene el arreglo----- " + D[id][x]);
+        for (int x = 1; x <= aux[0].length; x++) {
+            System.out.println("lalala " + aux[0].length);
+            //System.out.println("este es lo que tiene el arreglo----- " + D[id][x]);
             this.complejidad = x;
-            if (D[id][x] == dato && D[id][x] != '\0') {
+            System.out.println("el id buscado es   " + id);
+            System.out.println("el dato es        " + dato);
+            System.out.println("lo que hay en auxiliar baia baia " + aux[id][x] );
+            
+            if(aux[id][x] == null){
+                return false;
+            }
+            
+            if (aux[id][x].intValue() == dato) {
                 this.posicion = "[" + id + "]" + "[" + x + "]";
                 return true;
-            } else if (D[id][x + 1] == '\0') {
+            } else if (aux[id][x + 1] == null) {
                 return false;
             }
         }
@@ -52,7 +69,17 @@ public class Arre {
     }
 
     public void cleanArray(int tamano) {
-        D = new int[tamano + 1][tamano + 1];
+        aux = new Integer[tamano + 1][tamano + 1];
+        //D = new int[tamano + 1][tamano + 1];
+        System.out.println("tamaño..." + tamano);
+        for (int x = 1; x <= tamano; x++) {
+            for (int y = 1; y <= tamano; y++) {
+                aux[x][y] = null;
+            }
+
+        }
+        
+        /*D = new int[tamano + 1][tamano + 1];
         System.out.println("tamaño..." + tamano);
         for (int x = 1; x <= tamano; x++) {
             for (int y = 1; y <= tamano; y++) {
@@ -60,7 +87,7 @@ public class Arre {
                 D[x][y] = '\0';
             }
 
-        }
+        }*/
     }
 
     public static void main(String[] args) {
