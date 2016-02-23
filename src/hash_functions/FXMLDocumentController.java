@@ -264,6 +264,8 @@ public class FXMLDocumentController implements Initializable {
         }
         if (trunca.isSelected()) {
             opcHash = 4;
+            datoh.setText(" ");
+            idh.setText(" ");
             trunca(algo);
             for (int x = 0; x < truncas.datos.length; x++) {
                 datoh.setText(datoh.getText() + truncas.datos[x] + "\n");
