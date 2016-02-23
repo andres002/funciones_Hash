@@ -48,6 +48,8 @@ public class Truncamiento {
                    // System.out.println(res);
                 }
             }
+            if(res == 0)
+                res+=1;
             suit.acomodar(res, n[i]);
             datos[i] = n[i];
             ids[i] = res;
@@ -59,6 +61,8 @@ public class Truncamiento {
         int tama = n.length; //come
         int digitos = calculaD(clave);
         int id = GeneraId(clave, digitos, tama);
+         if(id == 0)
+                id+=1;
         return id;
 
     }
