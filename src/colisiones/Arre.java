@@ -41,7 +41,7 @@ public class Arre {
         for (int x = 0; x < D[0].length; x++) {
             System.out.println("este es lo que tiene el arreglo----- " + D[id][x]);
             this.complejidad = x;
-            if (D[id][x] == dato) {
+            if (D[id][x] == dato && D[id][x] != '\0') {
                 this.posicion = "[" + id + "]" + "[" + x + "]";
                 return true;
             } else if (D[id][x + 1] == '\0') {
