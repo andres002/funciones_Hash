@@ -71,6 +71,7 @@ public class Plegamiento {
                     ids[i] = res;
                     suit.acomodar(res, n[i]);
                     System.out.println("id: " + res + " valor: " + n[i]);
+                    band = false;
 
                 }
             }
