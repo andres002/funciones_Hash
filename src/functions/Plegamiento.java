@@ -22,23 +22,12 @@ public class Plegamiento {
     int suma = 0;
 
     public static void main(String[] args) {
-        boolean band = true;
         Plegamiento a = new Plegamiento();
-        int aux[] = new int[a.n.length];
-        System.out.println("Bienvenido");
 
+        System.out.println("Bienvenido");
         for (int i = 0; i < a.n.length; i++) {
-            int valora = a.plegamiento(a.n[i]);
-            band = true;
-            while (band) {
-                if (valora >= a.n.length) {
-                    valora = a.plegamiento(valora);
-                } else {
-                    aux[valora] = a.n[i];
-                    System.out.println("El id es: " + valora + " El dato es: " + a.n[i]);
-                    band = false;
-                }
-            }
+            int valora = a.plegamiento(a.n[i]);//aqui se genera el Id
+            System.out.println("El id es: " + valora + " El dato es: " + a.n[i]);
 
         }
     }
@@ -56,25 +45,15 @@ public class Plegamiento {
     }
 
     public void calcular() {
-        boolean band = true;
         datos = new int[n.length];
         ids = new int[n.length];
         int res;
         for (int i = 0; i < n.length; i++) {
             res = plegamiento(n[i]); //este es el Id aquí se obtiene
-            band = true;
-            while (band) {
-                if (res > n.length) {
-                    res = plegamiento(n[i]);
-                } else {
-                    datos[i] = n[i];
-                    ids[i] = res;
-                    suit.acomodar(res, n[i]);
-                    System.out.println("id: " + res + " valor: " + n[i]);
-                    band = false;
-
-                }
-            }
+            datos[i] = n[i];
+            ids[i] = res;
+            suit.acomodar(res, n[i]);
+            System.out.println("id: " + res + " valor: " + n[i]);
         }
     }
 
