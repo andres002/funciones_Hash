@@ -135,7 +135,7 @@ public class DDHas {
                     if(opcHash == 2){
                       
                         cu.calcula(dx);
-                         dx = cu.getClave();
+                        dx = cu.getClave();
                     }
                     if(opcHash == 3){
                        dx = ple.plegamiento(dx);
@@ -145,8 +145,7 @@ public class DDHas {
                         dx = tru.Truncar(dx);
 
                     }
-                    if(dx==0)
-                        dx = 1;
+                   
                     System.out.println("dxdd"+dx);
             }
             v[dx] =dato;
