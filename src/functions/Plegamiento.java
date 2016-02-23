@@ -99,7 +99,7 @@ public class Plegamiento {
             if (clave1 == 0) {
                 return clave + 1;
             } else {
-                return clave;
+                return clave+1;
             }
 
         }
@@ -107,7 +107,8 @@ public class Plegamiento {
         if (clave1 == 0) {
             return clave + 1;
         }
-
+        if(suma > n.length)
+            return plegamiento(suma);
         return suma;
 
     }
