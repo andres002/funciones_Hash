@@ -77,11 +77,18 @@ public class Truncamiento {
         //  System.out.println("El tamano es: "+tama);
         if (tama >= 100 && tama <= 999) {
             if (digitos == 1) {
-                return clave;
+               if(clave>n.length){
+                   clave=clave-n.length;
+               }
+               return clave;
             }
             if (digitos == 2) {
-                clave = clave / 10;
-                return clave;
+                clave = clave/10;
+                if(clave>n.length){
+                    while(clave>n.length){
+                        clave= clave-n.length;
+                    }
+                }
             }
             if (digitos == 3 || digitos == 4) {
                 String a = String.valueOf(clave);
@@ -93,7 +100,11 @@ public class Truncamiento {
                 //  System.out.println("union es: "+union);
 
                 convert = (Integer.parseInt(union)) + 1;
-                //  System.out.println("conver es: "+convert);
+               if(convert>n.length){
+                    while(convert>n.length){
+                        convert=convert-n.length;
+                    }
+                }
                 return convert;
 
             }
@@ -101,10 +112,21 @@ public class Truncamiento {
         }
         if (tama >= 1000 && tama <= 9999) {
             if (digitos == 1) {
+                
+                if(clave>n.length){
+                    while(clave>n.length){
+                        clave=clave-n.length;
+                    }
+                }
                 return clave;
             }
             if (digitos == 2) {
-                return clave / 10;
+                 if(clave>n.length){
+                    while(clave>n.length){
+                        clave=clave-n.length;
+                    }
+                }
+                return clave;
             }
             if (digitos == 3 || digitos == 4) {
                 String a = String.valueOf(clave);
@@ -113,6 +135,11 @@ public class Truncamiento {
 
                 String union = x + y;
                 convert = (Integer.parseInt(union)) + 1;
+                if(convert>n.length){
+                    while(convert>n.length){
+                        convert=convert-n.length;
+                    }
+                }
                 return convert;
 
             }
@@ -123,6 +150,11 @@ public class Truncamiento {
                 String z = String.valueOf(a.charAt(4));
                 String union = x + y + z;
                 convert = (Integer.parseInt(union)) + 1;
+                if(convert>n.length){
+                    while(convert>n.length){
+                        convert=convert-n.length;
+                    }
+                }
                 return convert;
 
             }
@@ -130,10 +162,19 @@ public class Truncamiento {
         }
         if (tama >= 10000 && tama < 100000) {
             if (digitos == 1) {
+                if(clave>n.length){
+                    while(clave>n.length){
+                        clave=clave-n.length;
+                    }
+                }
                 return clave;
             }
             if (digitos == 2) {
-                return clave / 10;
+               if(clave>n.length){
+                   while(clave>n.length){
+                       clave=clave-n.length;
+                   }
+               }
             }
             if (digitos == 3 || digitos == 4) {
                 String a = String.valueOf(clave);
@@ -142,7 +183,13 @@ public class Truncamiento {
 
                 String union = x + y;
                 convert = (Integer.parseInt(union)) + 1;
+                if(convert>n.length){
+                    while(convert>n.length){
+                        convert=convert-n.length;
+                    }
+                }
                 return convert;
+                
 
             }
             if (digitos == 5 || digitos == 6) {
@@ -152,6 +199,11 @@ public class Truncamiento {
                 String z = String.valueOf(a.charAt(4));
                 String union = x + y + z;
                 convert = (Integer.parseInt(union)) + 1;
+                if(convert>n.length){
+                    while(convert>n.length){
+                        convert=convert-n.length;
+                    }
+                }
                 return convert;
 
             }
@@ -162,6 +214,11 @@ public class Truncamiento {
                 String z = String.valueOf(a.charAt(4));
                 String union = x + y + z;
                 convert = (Integer.parseInt(union)) + 1;
+                if(convert>n.length){
+                    while(convert>n.length){
+                        convert=convert-n.length;
+                    }
+                }
                 return convert;
 
             }
@@ -173,21 +230,39 @@ public class Truncamiento {
                 String v = String.valueOf(a.charAt(6));
                 String union = x + y + z + v;
                 convert = (Integer.parseInt(union)) + 1;
+               if(convert>n.length){
+                    while(convert>n.length){
+                        convert=convert-n.length;
+                    }
+                }
                 return convert;
             }
         }
-        if (tama <= 100&&tama>10) {
+        if (tama < 100&&tama>10) {
             String a = String.valueOf(clave);
             String x = String.valueOf(a.charAt(0));
             String y = String.valueOf(a.charAt(1));
             String union = x + y;
             convert = (Integer.parseInt(union)) + 1;
-         
-            return convert;
+            if(convert>n.length){
+                    while(convert>n.length){
+                        convert=convert-n.length;
+                    }
+                }
+                return convert;
         }
-        if(tama>1&&tama<11){
-            return clave +1;
+        if(tama>0&&tama<11){
+            String a = String.valueOf(clave);
+            String x = String.valueOf(a.charAt(0));
+             convert = (Integer.parseInt(x)) + 1;
+            if(convert>n.length){
+                    while(convert>n.length){
+                        convert=convert-n.length;
+                    }
+                }
+                return convert;
         }
+        
 
         return 0;
     }
