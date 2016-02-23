@@ -255,6 +255,19 @@ public class Truncamiento {
                }
                return clave;
             }
+             if (digitos == 3) {
+                 String a = String.valueOf(clave);
+            String x = String.valueOf(a.charAt(0));
+            String y = String.valueOf(a.charAt(2));
+            String union = x + y;
+                convert = (Integer.parseInt(union)) + 1;
+               if(clave>n.length){
+                   while(clave>n.length){
+                       clave=clave-n.length;
+                   }
+               }
+               return convert;
+            }
         }
         if(tama>0&&tama<11){
             String a = String.valueOf(clave);
