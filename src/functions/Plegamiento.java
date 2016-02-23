@@ -97,18 +97,23 @@ public class Plegamiento {
         }
         if (digitos == 1) {
             if (clave1 == 0) {
-                return clave + 1;
+                suma = clave + 1;
             } else {
-                return clave;
+                suma = clave+1;
             }
+           
 
         }
 
         if (clave1 == 0) {
             return clave + 1;
         }
-
-        return suma;
+        while(suma > n.length){
+             suma =suma-n.length;
+        }
+           
+            return suma;
+       
 
     }
 

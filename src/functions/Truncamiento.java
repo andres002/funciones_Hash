@@ -42,6 +42,12 @@ public class Truncamiento {
         int res;
         for (int i = 0; i < n.length; i++) {
             res = Truncar(n[i]); //este es el Id aquí se obtiene
+            if(res>n.length){
+                while(res>n.length){
+                    res=res-n.length;
+                   // System.out.println(res);
+                }
+            }
             suit.acomodar(res, n[i]);
             datos[i] = n[i];
             ids[i] = res;
@@ -170,12 +176,15 @@ public class Truncamiento {
                 return convert;
             }
         }
-        if (tama <= 99) {
+        if (tama <= 100&&tama>10) {
             String a = String.valueOf(clave);
             String x = String.valueOf(a.charAt(0));
-            convert = (Integer.parseInt(x)) + 1;
+            String y = String.valueOf(a.charAt(1));
+            String union = x + y;
+            convert = (Integer.parseInt(union)) + 1;
             return convert;
         }
+        if(tama>1&&tama<11){}
 
         return 0;
     }
