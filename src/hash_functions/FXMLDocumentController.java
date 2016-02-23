@@ -52,6 +52,7 @@ public class FXMLDocumentController implements Initializable {
     static int[] datosL;
     public static int wea = 0;
     static lineal li = new lineal();
+    
     static cuadratico cu = new cuadratico();
     static Arre arre = new Arre();
     static Encadena cadena = new Encadena();

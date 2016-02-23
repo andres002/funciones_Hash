@@ -7,6 +7,7 @@ import static hash_functions.FXMLDocumentController.bandera;
 import hash_functions.Search;
 
 public class Cuadrado {
+    public static int clave2=0;
     public static Search s2 = new Search();
     int[] n;
     int h;
@@ -148,12 +149,15 @@ public class Cuadrado {
         System.out.println("num: " + l + " id: " + h);
         if (!bandera) {
             suit.acomodar(h, l);
+            clave2 = h;
             return true;
         } else {
             return s2.encontrar(h, l);
         }
     }
-
+    public int getClave(){
+        return clave2;
+    }
     public int[] getDatos() {
         return datos;
     }

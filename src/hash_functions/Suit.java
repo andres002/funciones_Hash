@@ -5,6 +5,7 @@
  */
 package hash_functions;
 
+import colisiones.DDHas;
 import static hash_functions.FXMLDocumentController.opcCol;
 import static hash_functions.FXMLDocumentController.opcHash;
 import static hash_functions.FXMLDocumentController.datos;
@@ -41,6 +42,14 @@ public class Suit {
         if (opcCol == 4) {
             if (datosL[id] != '\0') {
                 cu.cuadratico(id, datosL, dato);
+            } else {
+                datosL[id] = dato;
+            }
+        }
+        if (opcCol == 5) {
+            if (datosL[id] != '\0') {
+               DDHas doble = new DDHas();
+               doble.doubleHash(id, datosL, dato);
             } else {
                 datosL[id] = dato;
             }

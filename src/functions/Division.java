@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.*;
 
 public class Division {
-
+    public static int clave=0;
     Suit suit = new Suit();
     public int h;
     int[] n;
@@ -35,9 +35,13 @@ public class Division {
     public int hash(int dato) {
         return (dato % n.length) + 1;
     }
+    public int hash(int dato, int[] n) {
+        return (dato % n.length) + 1;
+    }
 
     public void acomodar(int num, int id) {
         suit.acomodar(id, num);
+        clave = id;
 
     }
 

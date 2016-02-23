@@ -5,6 +5,7 @@
  */
 package hash_functions;
 
+import colisiones.DDHas;
 import static hash_functions.FXMLDocumentController.arre;
 import static hash_functions.FXMLDocumentController.cadena;
 import static hash_functions.FXMLDocumentController.cu;
@@ -20,7 +21,7 @@ public class Search {
 
     public int id;
     public int dato;
-    
+    DDHas doble = new DDHas();
 
     public boolean encontrar(int id, int dato) {
         if (opcCol == 1) {
@@ -39,6 +40,12 @@ public class Search {
         if (opcCol == 4) {
             return cu.cuadraticoB(id, dato, datosL);
         }
+         if (opcCol == 5) {
+            
+               
+               return doble.doubleHashB(id, datosL, dato);
+          
+        }
         return false;
     }
     public String getPosicion(){
@@ -56,6 +63,9 @@ public class Search {
         if (opcCol == 4) {
             return cu.getPosicion()+"";
         }
+        if(opcCol == 5){
+            return doble.getPosicion()+"";
+        }
         return "-1";
     }
     public int getComplejidad(){
@@ -72,6 +82,9 @@ public class Search {
         }
         if (opcCol == 4) {
             return cu.getComplejidad();
+        }
+        if(opcCol == 5){
+            return doble.getComplejidad();
         }
         return -1;
     }
