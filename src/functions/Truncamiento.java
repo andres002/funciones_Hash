@@ -239,17 +239,21 @@ public class Truncamiento {
             }
         }
         if (tama < 100&&tama>10) {
-            String a = String.valueOf(clave);
-            String x = String.valueOf(a.charAt(0));
-            String y = String.valueOf(a.charAt(1));
-            String union = x + y;
-            convert = (Integer.parseInt(union)) + 1;
-            if(convert>n.length){
-                    while(convert>n.length){
-                        convert=convert-n.length;
+            if (digitos == 1) {
+                if(clave>n.length){
+                    while(clave>n.length){
+                        clave=clave-n.length;
                     }
                 }
-                return convert;
+                return clave;
+            }
+            if (digitos == 2) {
+               if(clave>n.length){
+                   while(clave>n.length){
+                       clave=clave-n.length;
+                   }
+               }
+            }
         }
         if(tama>0&&tama<11){
             String a = String.valueOf(clave);
