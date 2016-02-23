@@ -182,9 +182,12 @@ public class Truncamiento {
             String y = String.valueOf(a.charAt(1));
             String union = x + y;
             convert = (Integer.parseInt(union)) + 1;
+         
             return convert;
         }
-        if(tama>1&&tama<11){}
+        if(tama>1&&tama<11){
+            return clave +1;
+        }
 
         return 0;
     }
