@@ -56,7 +56,7 @@ public class Truncamiento {
     }
 
     public int Truncar(int clave) {
-        int tama = n.length;
+        int tama = n.length; //come
         int digitos = calculaD(clave);
         int id = GeneraId(clave, digitos, tama);
         return id;
