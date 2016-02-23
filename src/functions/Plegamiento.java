@@ -108,7 +108,7 @@ public class Plegamiento {
             return clave + 1;
         }
         if(suma > n.length)
-            return plegamiento(suma);
+            return suma-n.length;
         return suma;
 
     }
