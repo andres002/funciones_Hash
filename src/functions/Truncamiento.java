@@ -253,6 +253,7 @@ public class Truncamiento {
                        clave=clave-n.length;
                    }
                }
+               return clave;
             }
         }
         if(tama>0&&tama<11){
