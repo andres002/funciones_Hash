@@ -61,6 +61,23 @@ public class Plegamiento {
         int clave1 = clave;
         int digitos = calculaD(clave);
         String linea = String.valueOf(clave);
+        
+        if(digitos==6){
+            String a1 = linea.substring(0, 2);
+                System.out.println("a1: " +a1);
+            String a2 = linea.substring(2, 4);
+            String a3 = linea.substring(4, 6);
+               System.out.println("a2: "+a2);
+               System.out.println("a3: "+a3);
+            int b1 = Integer.parseInt(a1);
+            int b2 = Integer.parseInt(a2);
+            int b3=Integer.parseInt(a3);
+            
+            //   System.out.println("la suma ahora es: "+(b1+b2));
+            suma = b1 + b2+b3;
+            System.out.println("SUMA AQUI: "+suma);
+        
+        }
         if (digitos == 5) {
             String a1 = linea.substring(0, 3);
             //    System.out.println("a1: " +a1);
@@ -73,9 +90,9 @@ public class Plegamiento {
         }
         if (digitos == 4) {
             String a1 = linea.substring(0, 2);
-            //    System.out.println("a1: " +a1);
+                System.out.println("a1: " +a1);
             String a2 = linea.substring(2, 4);
-            //   System.out.println("a2: "+a2);
+              System.out.println("a2: "+a2);
             int b1 = Integer.parseInt(a1);
             int b2 = Integer.parseInt(a2);
             suma = b1 + b2;
@@ -110,8 +127,10 @@ public class Plegamiento {
         }
         while(suma > n.length){
              suma =suma-n.length;
+             System.out.println("ANCHO"+n.length);
+             
         }
-           
+          System.out.println("SUMA: "+suma); 
             return suma;
        
 
