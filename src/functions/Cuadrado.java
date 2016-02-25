@@ -7,7 +7,7 @@ import static hash_functions.FXMLDocumentController.bandera;
 import hash_functions.Search;
 
 public class Cuadrado {
-    public static int clave2=0;
+
     public static Search s2 = new Search();
     int[] n;
     int h;
@@ -149,15 +149,78 @@ public class Cuadrado {
         System.out.println("num: " + l + " id: " + h);
         if (!bandera) {
             suit.acomodar(h, l);
-            clave2 = h;
             return true;
         } else {
             return s2.encontrar(h, l);
         }
     }
-    public int getClave(){
-        return clave2;
+    public int calcular(int l) {
+        int cont = 0;
+        int k = l;
+        int dig = 0;
+        String k1;
+        k = (int) Math.pow(k, 2);
+        k1 = k + "";
+        if (k == 0) {
+            cont++;
+        }
+        while (k > 0) {
+            k = k / 10;
+            cont++;
+        }
+
+        if (n.length > 0 && n.length <= 10) {
+            digitos(1, k1, cont);
+        }
+        if (n.length > 10 && n.length <= 100) {
+            if (cont == 1) {
+                digitos(1, k1, cont);
+            } else {
+                digitos(2, k1, cont);
+            }
+        }
+        if (n.length > 100 && n.length <= 1000) {
+            if (cont == 1) {
+                digitos(1, k1, cont);
+            } else if (cont == 2) {
+                digitos(2, k1, cont);
+            } else {
+                digitos(3, k1, cont);
+            }
+        }
+
+        if (n.length > 1000 && n.length <= 10000) {
+            if (cont == 1) {
+                digitos(1, k1, cont);
+            } else if (cont == 2) {
+                digitos(2, k1, cont);
+            } else if (cont == 3) {
+                digitos(3, k1, cont);
+            } else {
+                digitos(4, k1, cont);
+            }
+            if (n.length > 10000 && n.length <= 100000) {
+                if (cont == 1) {
+                    digitos(1, k1, cont);
+                } else if (cont == 2) {
+                    digitos(2, k1, cont);
+                } else if (cont == 3) {
+                    digitos(3, k1, cont);
+                } else if (cont == 4) {
+                    digitos(4, k1, cont);
+                } else {
+                    digitos(5, k1, cont);
+                }
+            }
+        }
+        h = getResultado() + 1;
+        while (h > n.length) {
+            h = h - n.length;
+        }
+        System.out.println("num: " + l + " id: " + h);
+       return h;
     }
+   
     public int[] getDatos() {
         return datos;
     }
@@ -171,6 +234,7 @@ public class Cuadrado {
         ids = new int[n.length];
         for (int i = 0; i < n.length; i++) {
             calcula(n[i]);
+            
             datos[i] = n[i];
             ids[i] = h;
         }

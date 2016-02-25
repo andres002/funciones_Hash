@@ -80,6 +80,7 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("lineas---" + lineas);
             datos = a.AllLines(lineas);
             datosL = new int[datos.length + 1];
+            cleanDatosL();
             panel1.setDisable(false);
             tam = lineas;
 
@@ -112,6 +113,7 @@ public class FXMLDocumentController implements Initializable {
 
     private void cuadra(int dato) {
         if (!panel1.isDisable()) {
+            
             cuadrado.setArray(datos);
             cuadrado.calcula1();
             for (int i = 1; i < datosL.length; i++) {
@@ -209,23 +211,20 @@ public class FXMLDocumentController implements Initializable {
             opcCol = 3;
 
             if (!panel1.isDisable()) {
-                
-                datosL = new int[datosL.length];
-               
+                cleanDatosL();     
             }
 
         }
         if (rcuadra.isSelected()) {
             opcCol = 4;
-            if (!panel1.isDisable()) {
-                datosL = new int[datosL.length];
+           if (!panel1.isDisable()) {
+                cleanDatosL();     
             }
         }
         if (rdoble.isSelected()) {
             opcCol = 5;
             if (!panel1.isDisable()) {
-                datosL = new int[datosL.length];
-                //DobleHash();
+                cleanDatosL();     
             }
         }
 
@@ -276,7 +275,11 @@ public class FXMLDocumentController implements Initializable {
         panel1.setDisable(true);
         panel2.setDisable(false);
     }
-
+    private void cleanDatosL(){
+        for (int i = 0; i < datosL.length; i++) {
+            datosL[i]='\0';
+        }
+    }
     @FXML
     private void Busqueda() {
 

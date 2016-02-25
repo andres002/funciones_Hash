@@ -48,9 +48,11 @@ public class Suit {
         }
         if (opcCol == 5) {
             if (datosL[id] != '\0') {
+                System.out.println("colision dato "+dato+ " posicion "+id);
                DDHas doble = new DDHas();
                doble.doubleHash(id, datosL, dato);
             } else {
+                System.out.println("se inserto "+dato+" en la posicion "+id);
                 datosL[id] = dato;
             }
         }

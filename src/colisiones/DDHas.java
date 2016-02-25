@@ -44,8 +44,8 @@ public class DDHas {
             }
             if(opcHash == 2){
                  cu.setArray(new int[v.length-1]);
-                cu.calcula(d);
-                 dx = cu.getClave();
+                dx = cu.calcular(d);
+               
             }
             if(opcHash == 3){
                 
@@ -67,8 +67,8 @@ public class DDHas {
                     }
                     if(opcHash == 2){
                         
-                        cu.calcula(dx);
-                        dx = cu.getClave();
+                        dx = cu.calcular(dx);
+                       
                     }
                     if(opcHash == 3){
                          ple.setArray(new int[v.length-1]);
@@ -116,9 +116,7 @@ public class DDHas {
             }
             if(opcHash == 2){
                 cu.setArray(new int[v.length-1]);
-                cu.calcula(d);
-                
-                 dx = cu.getClave();
+                dx = cu.calcular(d);            
             }
             if(opcHash == 3){
                 ple.setArray(new int[v.length-1]);
@@ -130,15 +128,15 @@ public class DDHas {
                 dx = tru.Truncar(d);
                 
             }
-  
+            System.out.println("prueba"+v[5]);
             while(dx<=N  && v[dx] != '\0'){
                 if(opcHash == 1){
                          dx = div.hash(dx,new int[v.length-1]);
                     }
                     if(opcHash == 2){
-                      
-                        cu.calcula(dx);
-                        dx = cu.getClave();
+                        System.out.println("new id"+dato);
+                        dx =cu.calcular(dx);
+                        
                     }
                     if(opcHash == 3){
                        dx = ple.plegamiento(dx);
@@ -148,8 +146,8 @@ public class DDHas {
                         dx = tru.Truncar(dx);
 
                     }
-                   
-                    System.out.println("dxdd"+dx);
+                   System.out.println("dato"+dato);
+                    System.out.println("id ddh"+dx);
             }
             System.out.println("v[dx]"+v[dx]);
             v[dx] =dato;
