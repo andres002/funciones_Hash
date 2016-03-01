@@ -36,6 +36,10 @@ public class Division {
         return (dato % n.length) + 1;
     }
     public int hash(int dato, int[] n) {
+        System.out.println("dato***" +dato);
+        System.out.println("array"+n.length);
+        int au =  (dato % n.length) + 1;
+        System.out.println(au);
         return (dato % n.length) + 1;
     }
 

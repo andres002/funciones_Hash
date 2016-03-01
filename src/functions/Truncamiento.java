@@ -81,6 +81,7 @@ public class Truncamiento {
         //  System.out.println("El tamano es: "+tama);
         if (tama >= 100 && tama <= 999) {
             if (digitos == 1) {
+                clave+=1;
                if(clave>n.length){
                    clave=clave-n.length;
                }
@@ -88,6 +89,7 @@ public class Truncamiento {
             }
             if (digitos == 2) {
                 clave = clave/10;
+                clave+=1;
                 if(clave>n.length){
                     while(clave>n.length){
                         clave= clave-n.length;
@@ -116,7 +118,7 @@ public class Truncamiento {
         }
         if (tama >= 1000 && tama <= 9999) {
             if (digitos == 1) {
-                
+                clave+=1;
                 if(clave>n.length){
                     while(clave>n.length){
                         clave=clave-n.length;
@@ -125,6 +127,8 @@ public class Truncamiento {
                 return clave;
             }
             if (digitos == 2) {
+                clave = clave/10;
+                clave+=1;
                  if(clave>n.length){
                     while(clave>n.length){
                         clave=clave-n.length;
@@ -166,6 +170,7 @@ public class Truncamiento {
         }
         if (tama >= 10000 && tama < 100000) {
             if (digitos == 1) {
+                clave+=1;
                 if(clave>n.length){
                     while(clave>n.length){
                         clave=clave-n.length;
@@ -174,6 +179,8 @@ public class Truncamiento {
                 return clave;
             }
             if (digitos == 2) {
+                clave = clave/10;
+                clave+=1;
                if(clave>n.length){
                    while(clave>n.length){
                        clave=clave-n.length;
@@ -244,6 +251,7 @@ public class Truncamiento {
         }
         if (tama < 100&&tama>10) {
             if (digitos == 1) {
+                clave+=1;
                 if(clave>n.length){
                     while(clave>n.length){
                         clave=clave-n.length;
@@ -252,6 +260,8 @@ public class Truncamiento {
                 return clave;
             }
             if (digitos == 2) {
+                clave = clave/10;
+                clave+=1;
                if(clave>n.length){
                    while(clave>n.length){
                        clave=clave-n.length;

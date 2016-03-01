@@ -25,7 +25,7 @@
                 <RadioButton fx:id="encadena" layoutX="309.0" layoutY="98.0" mnemonicParsing="false" text="Encadenamiento" toggleGroup="$col" />
                 <RadioButton fx:id="rlineal" layoutX="310.0" layoutY="128.0" mnemonicParsing="false" text="Reasignación lineal" toggleGroup="$col" />
                 <RadioButton fx:id="rcuadra" layoutX="309.0" layoutY="159.0" mnemonicParsing="false" text="Reasignación cuadrática" toggleGroup="$col" />
-                <RadioButton fx:id="rdoble" layoutX="309.0" layoutY="196.0" mnemonicParsing="false" text="Reasiganación doble dirección Hash" toggleGroup="$col" />
+                <RadioButton fx:id="rdoble" layoutX="309.0" layoutY="196.0" mnemonicParsing="false" text="Reasignación doble dirección Hash" toggleGroup="$col" />
                 <Label layoutX="35.0" layoutY="38.0" text="Funciones Hash" />
                 <Label layoutX="350.0" layoutY="38.0" text="Colisiones" />
                 <Button fx:id="constTabla" layoutX="248.0" layoutY="245.0" mnemonicParsing="false" onAction="#opciones" text="Construir Tabla" />

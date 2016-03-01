@@ -48,7 +48,7 @@ public class DDHas {
                
             }
             if(opcHash == 3){
-                
+                    ple.setArray(new int[v.length-1]);
           
                dx = ple.plegamiento(d);
               

@@ -85,10 +85,10 @@ public class Cuadrado {
 
     public boolean calcula(int l) {
         int cont = 0;
-        int k = l;
+        long k = l;
         int dig = 0;
         String k1;
-        k = (int) Math.pow(k, 2);
+        k = (long) Math.pow(k, 2);
         k1 = k + "";
         if (k == 0) {
             cont++;
